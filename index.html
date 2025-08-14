@@ -34,29 +34,75 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section con Partículas Interactivas -->
     <section id="inicio" class="hero">
+        <canvas id="particle-canvas"></canvas>
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="hero-title">Transforma tu Vida</h1>
-            <h2 class="hero-subtitle">Reparación de Cromosomas y Sanación de Emociones Traumáticas</h2>
-            <p class="hero-description">
-                Descubre el poder de los decretos terapéuticos, tarjetas energéticas e imanes para liberar 
-                patrones emocionales limitantes y reparar tu información celular hacia una vida plena y equilibrada.
-            </p>
-            <div class="hero-buttons">
-                <a href="#contacto" class="btn btn-primary">Agenda tu Sesión</a>
-                <a href="#terapia" class="btn btn-outline">Conoce la Técnica</a>
+            <div class="hero-text-container">
+                <h1 class="hero-title">
+                    <span class="word">Transforma</span>
+                    <span class="word">tu</span>
+                    <span class="word">Vida</span>
+                </h1>
+                <h2 class="hero-subtitle">
+                    <span class="char">R</span><span class="char">e</span><span class="char">p</span><span class="char">a</span><span class="char">r</span><span class="char">a</span><span class="char">c</span><span class="char">i</span><span class="char">ó</span><span class="char">n</span>
+                    <span class="space"></span>
+                    <span class="char">d</span><span class="char">e</span>
+                    <span class="space"></span>
+                    <span class="char">C</span><span class="char">r</span><span class="char">o</span><span class="char">m</span><span class="char">o</span><span class="char">s</span><span class="char">o</span><span class="char">m</span><span class="char">a</span><span class="char">s</span>
+                </h2>
+                <p class="hero-description">
+                    Descubre el poder de los decretos terapéuticos, tarjetas energéticas e imanes para liberar 
+                    patrones emocionales limitantes y reparar tu información celular hacia una vida plena y equilibrada.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contacto" class="btn btn-primary">
+                        <span>Agenda tu Sesión</span>
+                        <div class="btn-particles"></div>
+                    </a>
+                    <a href="#terapia" class="btn btn-outline">
+                        <span>Conoce la Técnica</span>
+                        <div class="btn-particles"></div>
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="hero-image">
-            <div class="dna-container">
-                <div class="dna-helix"></div>
+        <div class="hero-dna">
+            <div class="dna-strand strand-1">
+                <div class="dna-base base-a"></div>
+                <div class="dna-base base-t"></div>
+                <div class="dna-base base-g"></div>
+                <div class="dna-base base-c"></div>
+                <div class="dna-base base-a"></div>
+                <div class="dna-base base-t"></div>
+                <div class="dna-base base-g"></div>
+                <div class="dna-base base-c"></div>
             </div>
-            <div class="floating-elements">
-                <div class="element element-1"></div>
-                <div class="element element-2"></div>
-                <div class="element element-3"></div>
+            <div class="dna-strand strand-2">
+                <div class="dna-base base-t"></div>
+                <div class="dna-base base-a"></div>
+                <div class="dna-base base-c"></div>
+                <div class="dna-base base-g"></div>
+                <div class="dna-base base-t"></div>
+                <div class="dna-base base-a"></div>
+                <div class="dna-base base-c"></div>
+                <div class="dna-base base-g"></div>
             </div>
+            <div class="dna-connections">
+                <div class="connection"></div>
+                <div class="connection"></div>
+                <div class="connection"></div>
+                <div class="connection"></div>
+                <div class="connection"></div>
+                <div class="connection"></div>
+                <div class="connection"></div>
+                <div class="connection"></div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+            <span>Desliza para explorar</span>
         </div>
     </section>
 
