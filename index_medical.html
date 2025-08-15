@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Regeneración Cromosómica | Centro Médico Especializado</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Médico Profesional -->
+    <header class="medical-header" id="medicalHeader">
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="images/logo.png" alt="Centro Médico" class="logo-image">
+                <div class="brand-info">
+                    <h1 class="brand-name">Centro Médico Regenerativo</h1>
+                    <span class="brand-tagline">Excelencia en Medicina Biomagnética</span>
+                </div>
+            </div>
+            
+            <nav class="main-navigation">
+                <ul class="nav-menu">
+                    <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+                    <li><a href="#servicios" class="nav-link">Servicios Médicos</a></li>
+                    <li><a href="#doctor" class="nav-link">Nuestro Doctor</a></li>
+                    <li><a href="#testimonios" class="nav-link">Testimonios</a></li>
+                    <li><a href="#documentos" class="nav-link">Documentos</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+                
+                <div class="header-actions">
+                    <a href="tel:+52-123-456-7890" class="emergency-btn">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>Urgencias</span>
+                    </a>
+                    <button class="appointment-btn" onclick="openAppointmentModal()">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Agendar Cita</span>
+                    </button>
+                </div>
+                
+                <div class="mobile-toggle" id="mobileToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section Médico -->
+    <section id="inicio" class="hero-medical">
+        <div class="hero-background">
+            <div class="medical-pattern"></div>
+            <div class="floating-elements">
+                <div class="medical-cross cross-1">
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="medical-cross cross-2">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <div class="medical-cross cross-3">
+                    <i class="fas fa-user-md"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="medical-badge">
+                        <i class="fas fa-award"></i>
+                        <span>Medicina Biomagnética Certificada</span>
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        <span class="title-main">Reparación Cromosómica</span>
+                        <span class="title-sub">y Medicina Regenerativa</span>
+                    </h1>
+                    
+                    <p class="hero-description">
+                        Especialistas en biomagnetismo médico y terapias de regeneración celular. 
+                        Ofrecemos tratamientos innovadores basados en evidencia científica para 
+                        restaurar el equilibrio natural de su organismo.
+                    </p>
+                    
+                    <div class="medical-stats">
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-user-check"></i>
+                            </div>
+                            <div class="stat-content">
+                                <span class="stat-number" data-target="850">0</span>
+                                <span class="stat-label">Pacientes Tratados</span>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-percentage"></i>
+                            </div>
+                            <div class="stat-content">
+                                <span class="stat-number" data-target="96">0</span>
+                                <span class="stat-label">% Efectividad</span>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="stat-content">
+                                <span class="stat-number" data-target="18">0</span>
+                                <span class="stat-label">Años de Experiencia</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-actions">
+                        <button class="btn-primary" onclick="openAppointmentModal()">
+                            <i class="fas fa-calendar-plus"></i>
+                            <span>Agendar Consulta</span>
+                        </button>
+                        <a href="#servicios" class="btn-secondary">
+                            <i class="fas fa-stethoscope"></i>
+                            <span>Ver Servicios</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="medical-logo-container">
+                        <div class="logo-frame">
+                            <img src="images/logo.png" alt="Centro Médico Logo" class="hero-logo">
+                            <div class="pulse-ring ring-1"></div>
+                            <div class="pulse-ring ring-2"></div>
+                            <div class="pulse-ring ring-3"></div>
+                        </div>
+                        <div class="medical-symbols">
+                            <div class="symbol symbol-1">
+                                <i class="fas fa-dna"></i>
+                            </div>
+                            <div class="symbol symbol-2">
+                                <i class="fas fa-atom"></i>
+                            </div>
+                            <div class="symbol symbol-3">
+                                <i class="fas fa-microscope"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Médicos -->
+    <section id="servicios" class="services-medical">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-stethoscope"></i>
+                    <span>Servicios Especializados</span>
+                </div>
+                <h2 class="section-title">
+                    <span>Tratamientos Médicos</span>
+                    <span class="title-accent">Innovadores</span>
+                </h2>
+                <p class="section-description">
+                    Ofrecemos una gama completa de servicios médicos especializados 
+                    con las técnicas más avanzadas en medicina biomagnética.
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-dna"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Terapia Cromosómica</h3>
+                        <p class="service-description">
+                            Tratamiento especializado para la reparación y regeneración 
+                            de estructuras celulares mediante biomagnetismo dirigido.
+                        </p>
+                        <ul class="service-benefits">
+                            <li><i class="fas fa-check"></i> Regeneración celular acelerada</li>
+                            <li><i class="fas fa-check"></i> Equilibrio bioenergético</li>
+                            <li><i class="fas fa-check"></i> Tratamiento no invasivo</li>
+                        </ul>
+                        <div class="service-duration">
+                            <i class="fas fa-clock"></i>
+                            <span>Duración: 45-60 minutos</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Equilibrio Neurológico</h3>
+                        <p class="service-description">
+                            Terapia especializada para el sistema nervioso mediante 
+                            campos magnéticos específicos y frecuencias terapéuticas.
+                        </p>
+                        <ul class="service-benefits">
+                            <li><i class="fas fa-check"></i> Reducción de estrés</li>
+                            <li><i class="fas fa-check"></i> Mejora del sueño</li>
+                            <li><i class="fas fa-check"></i> Optimización cognitiva</li>
+                        </ul>
+                        <div class="service-duration">
+                            <i class="fas fa-clock"></i>
+                            <span>Duración: 50-70 minutos</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Biomagnetismo Cardíaco</h3>
+                        <p class="service-description">
+                            Tratamiento dirigido al sistema cardiovascular para 
+                            optimizar la función cardíaca y circulatoria.
+                        </p>
+                        <ul class="service-benefits">
+                            <li><i class="fas fa-check"></i> Mejora circulatoria</li>
+                            <li><i class="fas fa-check"></i> Regulación del ritmo</li>
+                            <li><i class="fas fa-check"></i> Fortalecimiento cardíaco</li>
+                        </ul>
+                        <div class="service-duration">
+                            <i class="fas fa-clock"></i>
+                            <span>Duración: 40-55 minutos</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Fortalecimiento Inmune</h3>
+                        <p class="service-description">
+                            Protocolo médico para optimizar el sistema inmunológico 
+                            y fortalecer las defensas naturales del organismo.
+                        </p>
+                        <ul class="service-benefits">
+                            <li><i class="fas fa-check"></i> Fortalecimiento inmune</li>
+                            <li><i class="fas fa-check"></i> Prevención de enfermedades</li>
+                            <li><i class="fas fa-check"></i> Recuperación acelerada</li>
+                        </ul>
+                        <div class="service-duration">
+                            <i class="fas fa-clock"></i>
+                            <span>Duración: 35-50 minutos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección del Doctor -->
+    <section id="doctor" class="doctor-profile">
+        <div class="container">
+            <div class="doctor-content">
+                <div class="doctor-image">
+                    <div class="image-frame">
+                        <img src="images/logo.png" alt="Dr. Especialista" class="doctor-photo">
+                        <div class="medical-credentials">
+                            <div class="credential-badge">
+                                <i class="fas fa-award"></i>
+                                <span>Certificado</span>
+                            </div>
+                            <div class="credential-badge">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Especialista</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="doctor-info">
+                    <div class="doctor-header">
+                        <div class="doctor-badge">
+                            <i class="fas fa-user-md"></i>
+                            <span>Médico Especialista</span>
+                        </div>
+                        <h2 class="doctor-name">
+                            <span>Dr. [Nombre del Doctor]</span>
+                            <span class="doctor-specialty">Medicina Biomagnética y Regenerativa</span>
+                        </h2>
+                    </div>
+                    
+                    <div class="doctor-description">
+                        <p>
+                            Médico especialista con más de 18 años de experiencia en medicina 
+                            biomagnética y terapias regenerativas. Pionero en el desarrollo de 
+                            protocolos avanzados de reparación cromosómica y equilibrio bioenergético.
+                        </p>
+                        <p>
+                            Graduado con honores en Medicina General y especializado en Biomagnetismo 
+                            Médico. Ha tratado exitosamente a más de 850 pacientes con diversos 
+                            padecimientos mediante técnicas innovadoras y no invasivas.
+                        </p>
+                    </div>
+                    
+                    <div class="doctor-achievements">
+                        <h3>Certificaciones y Experiencia</h3>
+                        <div class="achievements-grid">
+                            <div class="achievement-item">
+                                <i class="fas fa-certificate"></i>
+                                <div class="achievement-text">
+                                    <span class="achievement-title">Medicina Biomagnética</span>
+                                    <span class="achievement-institution">Instituto de Medicina Alternativa</span>
+                                </div>
+                            </div>
+                            <div class="achievement-item">
+                                <i class="fas fa-microscope"></i>
+                                <div class="achievement-text">
+                                    <span class="achievement-title">Terapias Regenerativas</span>
+                                    <span class="achievement-institution">Centro de Investigación Médica</span>
+                                </div>
+                            </div>
+                            <div class="achievement-item">
+                                <i class="fas fa-atoms"></i>
+                                <div class="achievement-text">
+                                    <span class="achievement-title">Bioenergetismo Clínico</span>
+                                    <span class="achievement-institution">Universidad de Medicina Integrativa</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="doctor-contact">
+                        <button class="btn-primary" onclick="openAppointmentModal()">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Agendar Consulta</span>
+                        </button>
+                        <a href="#contacto" class="btn-secondary">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contactar Directamente</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios de Pacientes -->
+    <section id="testimonios" class="testimonials-medical">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-quote-right"></i>
+                    <span>Testimonios</span>
+                </div>
+                <h2 class="section-title">
+                    <span>Experiencias de</span>
+                    <span class="title-accent">Nuestros Pacientes</span>
+                </h2>
+                <p class="section-description">
+                    Conozca las experiencias reales de pacientes que han transformado 
+                    su salud mediante nuestros tratamientos especializados.
+                </p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="patient-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="patient-info">
+                            <h4 class="patient-name">María González</h4>
+                            <span class="patient-condition">Fatiga Crónica</span>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>
+                            "Después de años luchando contra la fatiga crónica, encontré en 
+                            este centro la solución que tanto buscaba. Los tratamientos de 
+                            biomagnetismo me devolvieron la energía y vitalidad."
+                        </p>
+                    </div>
+                    <div class="testimonial-footer">
+                        <div class="treatment-info">
+                            <i class="fas fa-calendar"></i>
+                            <span>6 sesiones</span>
+                        </div>
+                        <div class="improvement-rate">
+                            <i class="fas fa-chart-line"></i>
+                            <span>95% mejora</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="patient-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="patient-info">
+                            <h4 class="patient-name">Carlos Mendoza</h4>
+                            <span class="patient-condition">Dolor Crónico</span>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>
+                            "El dolor de espalda que me acompañó por 8 años desapareció 
+                            completamente después del tratamiento. El doctor es excepcional 
+                            y su metodología realmente funciona."
+                        </p>
+                    </div>
+                    <div class="testimonial-footer">
+                        <div class="treatment-info">
+                            <i class="fas fa-calendar"></i>
+                            <span>4 sesiones</span>
+                        </div>
+                        <div class="improvement-rate">
+                            <i class="fas fa-chart-line"></i>
+                            <span>100% mejora</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="patient-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="patient-info">
+                            <h4 class="patient-name">Ana Patricia</h4>
+                            <span class="patient-condition">Ansiedad</span>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>
+                            "Los tratamientos de equilibrio neurológico me ayudaron enormemente 
+                            con la ansiedad. Ahora puedo dormir bien y mi calidad de vida 
+                            mejoró significativamente."
+                        </p>
+                    </div>
+                    <div class="testimonial-footer">
+                        <div class="treatment-info">
+                            <i class="fas fa-calendar"></i>
+                            <span>8 sesiones</span>
+                        </div>
+                        <div class="improvement-rate">
+                            <i class="fas fa-chart-line"></i>
+                            <span>92% mejora</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentos Médicos -->
+    <section id="documentos" class="documents-medical">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-file-medical"></i>
+                    <span>Documentación</span>
+                </div>
+                <h2 class="section-title">
+                    <span>Documentos</span>
+                    <span class="title-accent">Médicos y Legales</span>
+                </h2>
+                <p class="section-description">
+                    Acceda a toda la documentación necesaria para sus tratamientos 
+                    y conozca nuestras políticas de privacidad y consentimiento.
+                </p>
+            </div>
+            
+            <div class="documents-grid">
+                <div class="document-card">
+                    <div class="document-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="document-content">
+                        <h3 class="document-title">Aviso de Privacidad</h3>
+                        <p class="document-description">
+                            Conozca cómo protegemos y manejamos su información personal 
+                            y datos médicos bajo las más estrictas medidas de seguridad.
+                        </p>
+                        <div class="document-details">
+                            <span class="document-type">PDF</span>
+                            <span class="document-size">1.2 MB</span>
+                            <span class="document-updated">Actualizado: Dic 2024</span>
+                        </div>
+                        <a href="documentos/Aviso de Privacidad para Servicios de Terapia Holística.pdf" 
+                           class="document-download" target="_blank">
+                            <i class="fas fa-download"></i>
+                            <span>Descargar Documento</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="document-card">
+                    <div class="document-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <div class="document-content">
+                        <h3 class="document-title">Consentimiento Informado</h3>
+                        <p class="document-description">
+                            Documento de consentimiento informado para terapias biomagnéticas 
+                            y tratamientos de medicina regenerativa.
+                        </p>
+                        <div class="document-details">
+                            <span class="document-type">PDF</span>
+                            <span class="document-size">950 KB</span>
+                            <span class="document-updated">Actualizado: Dic 2024</span>
+                        </div>
+                        <a href="documentos/CONCENTIMIENTO INFORMADO PARA TERAPIAS.pdf" 
+                           class="document-download" target="_blank">
+                            <i class="fas fa-download"></i>
+                            <span>Descargar Documento</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto y Ubicación -->
+    <section id="contacto" class="contact-medical">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Contacto</span>
+                </div>
+                <h2 class="section-title">
+                    <span>Agende su</span>
+                    <span class="title-accent">Consulta Médica</span>
+                </h2>
+                <p class="section-description">
+                    Estamos aquí para ayudarle en su camino hacia una mejor salud. 
+                    Contáctenos para agendar su consulta médica personalizada.
+                </p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-section">
+                        <h3>Información de Contacto</h3>
+                        <div class="contact-items">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <span class="contact-label">Teléfono Principal</span>
+                                    <span class="contact-value">+52 (123) 456-7890</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <span class="contact-label">WhatsApp</span>
+                                    <span class="contact-value">+52 (123) 456-7891</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <span class="contact-label">Email</span>
+                                    <span class="contact-value">info@centromedico.com</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <span class="contact-label">Ubicación</span>
+                                    <span class="contact-value">Av. Medicina 123, Col. Salud<br>Ciudad de México, CP 12345</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="schedule-section">
+                        <h3>Horarios de Atención</h3>
+                        <div class="schedule-grid">
+                            <div class="schedule-item">
+                                <span class="schedule-day">Lunes - Viernes</span>
+                                <span class="schedule-time">8:00 AM - 7:00 PM</span>
+                            </div>
+                            <div class="schedule-item">
+                                <span class="schedule-day">Sábados</span>
+                                <span class="schedule-time">9:00 AM - 3:00 PM</span>
+                            </div>
+                            <div class="schedule-item emergency">
+                                <span class="schedule-day">Urgencias</span>
+                                <span class="schedule-time">24 horas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="appointment-form">
+                    <div class="form-header">
+                        <h3>Agendar Consulta</h3>
+                        <p>Complete el formulario para solicitar su cita médica</p>
+                    </div>
+                    
+                    <form class="medical-form" id="appointmentForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="patientName">Nombre Completo</label>
+                                <input type="text" id="patientName" name="patientName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="patientPhone">Teléfono</label>
+                                <input type="tel" id="patientPhone" name="patientPhone" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="patientEmail">Email</label>
+                                <input type="email" id="patientEmail" name="patientEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="preferredDate">Fecha Preferida</label>
+                                <input type="date" id="preferredDate" name="preferredDate" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="serviceType">Tipo de Consulta</label>
+                            <select id="serviceType" name="serviceType" required>
+                                <option value="">Seleccione un servicio</option>
+                                <option value="cromosómica">Terapia Cromosómica</option>
+                                <option value="neurológica">Equilibrio Neurológico</option>
+                                <option value="cardíaca">Biomagnetismo Cardíaco</option>
+                                <option value="inmune">Fortalecimiento Inmune</option>
+                                <option value="consulta">Consulta General</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="symptoms">Síntomas o Motivo de Consulta</label>
+                            <textarea id="symptoms" name="symptoms" rows="4" 
+                                    placeholder="Describa brevemente sus síntomas o motivo de consulta..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary submit-btn">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Enviar Solicitud</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Médico -->
+    <footer class="medical-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="Centro Médico" class="footer-logo-img">
+                        <div class="footer-brand">
+                            <h3>Centro Médico Regenerativo</h3>
+                            <p>Excelencia en Medicina Biomagnética</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Comprometidos con su salud y bienestar, ofrecemos los tratamientos 
+                        más avanzados en medicina biomagnética y terapias regenerativas.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Servicios Médicos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#servicios">Terapia Cromosómica</a></li>
+                        <li><a href="#servicios">Equilibrio Neurológico</a></li>
+                        <li><a href="#servicios">Biomagnetismo Cardíaco</a></li>
+                        <li><a href="#servicios">Fortalecimiento Inmune</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Información</h4>
+                    <ul class="footer-links">
+                        <li><a href="#doctor">Nuestro Doctor</a></li>
+                        <li><a href="#testimonios">Testimonios</a></li>
+                        <li><a href="#documentos">Documentos</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contacto de Emergencia</h4>
+                    <div class="emergency-contact">
+                        <div class="emergency-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>+52 (123) 456-7890</span>
+                        </div>
+                        <div class="emergency-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Disponible 24/7</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2024 Centro Médico Regenerativo. Todos los derechos reservados.</p>
+                </div>
+                <div class="footer-legal">
+                    <a href="#privacy">Aviso de Privacidad</a>
+                    <a href="#terms">Términos y Condiciones</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Cita -->
+    <div class="modal-overlay" id="appointmentModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Agendar Consulta Médica</h3>
+                <button class="modal-close" onclick="closeAppointmentModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="modal-form">
+                    <div class="form-group">
+                        <label>Nombre Completo</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Teléfono</label>
+                        <input type="tel" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Tipo de Consulta</label>
+                        <select required>
+                            <option value="">Seleccione...</option>
+                            <option>Terapia Cromosómica</option>
+                            <option>Equilibrio Neurológico</option>
+                            <option>Biomagnetismo Cardíaco</option>
+                            <option>Consulta General</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Confirmar Cita</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

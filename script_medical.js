@@ -94,12 +94,14 @@ function initializeScrollEffects() {
     const header = document.querySelector('.medical-header');
     
     window.addEventListener('scroll', function() {
-        const scrolled = window.scrollY > 50;
+        const scrolled = window.scrollY > 100;
         
         if (scrolled) {
-            header.classList.add('scrolled');
+            header.style.background = 'rgba(255, 255, 255, 0.98)';
+            header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
         } else {
-            header.classList.remove('scrolled');
+            header.style.background = 'rgba(255, 255, 255, 0.95)';
+            header.style.boxShadow = 'none';
         }
     });
     
@@ -192,47 +194,30 @@ function toggleMobileMenu() {
     const mobileToggle = document.getElementById('mobileToggle');
     const navMenu = document.querySelector('.nav-menu');
     const headerActions = document.querySelector('.header-actions');
-    const header = document.querySelector('.medical-header');
     
     if (isMenuOpen) {
         // Abrir menú
-        header.classList.add('mobile-menu-open');
         mobileToggle.classList.add('active');
-        
-        // Estilo del menú desplegable con animación mejorada
         navMenu.style.display = 'flex';
         navMenu.style.flexDirection = 'column';
         navMenu.style.position = 'absolute';
         navMenu.style.top = '100%';
         navMenu.style.left = '0';
         navMenu.style.right = '0';
-        navMenu.style.background = 'rgba(255, 255, 255, 0.98)';
-        navMenu.style.backdropFilter = 'blur(15px)';
-        navMenu.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.1)';
-        navMenu.style.padding = '1.5rem';
+        navMenu.style.background = 'white';
+        navMenu.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+        navMenu.style.padding = '1rem';
         navMenu.style.zIndex = '1000';
-        navMenu.style.borderTop = '1px solid rgba(44, 90, 160, 0.1)';
-        navMenu.style.gap = '0.8rem';
-        navMenu.style.animation = 'slideDown 0.3s ease-out';
         
-        // Estilo de los botones de acción
         headerActions.style.display = 'flex';
         headerActions.style.flexDirection = 'column';
-        headerActions.style.position = 'absolute';
-        headerActions.style.top = 'calc(100% + ' + (navMenu.children.length * 50 + 60) + 'px)';
-        headerActions.style.left = '0';
-        headerActions.style.right = '0';
-        headerActions.style.background = 'rgba(255, 255, 255, 0.98)';
-        headerActions.style.backdropFilter = 'blur(15px)';
-        headerActions.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.1)';
-        headerActions.style.padding = '1.5rem';
-        headerActions.style.zIndex = '999';
-        headerActions.style.gap = '0.8rem';
-        headerActions.style.borderTop = '1px solid rgba(44, 90, 160, 0.1)';
-        headerActions.style.animation = 'slideDown 0.3s ease-out 0.1s both';
+        headerActions.style.marginTop = '1rem';
         
-        // Prevenir scroll del body
-        document.body.style.overflow = 'hidden';
+        // Animación del botón hamburguesa
+        const spans = mobileToggle.querySelectorAll('span');
+        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
     } else {
         closeMobileMenu();
     }
@@ -243,11 +228,6 @@ function closeMobileMenu() {
     const mobileToggle = document.getElementById('mobileToggle');
     const navMenu = document.querySelector('.nav-menu');
     const headerActions = document.querySelector('.header-actions');
-    const header = document.querySelector('.medical-header');
-    
-    if (header) {
-        header.classList.remove('mobile-menu-open');
-    }
     
     if (mobileToggle) {
         mobileToggle.classList.remove('active');
@@ -256,11 +236,6 @@ function closeMobileMenu() {
         if (window.innerWidth <= 768) {
             navMenu.style.display = 'none';
             headerActions.style.display = 'none';
-        } else {
-            navMenu.style.display = 'flex';
-            headerActions.style.display = 'flex';
-            navMenu.style.position = 'static';
-            headerActions.style.position = 'static';
         }
         
         // Restaurar botón hamburguesa
@@ -269,9 +244,6 @@ function closeMobileMenu() {
             span.style.transform = '';
             span.style.opacity = '';
         });
-        
-        // Restaurar scroll del body
-        document.body.style.overflow = '';
     }
 }
 
