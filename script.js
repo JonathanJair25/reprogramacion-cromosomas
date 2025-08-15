@@ -640,7 +640,7 @@ function initMobileOptimizations() {
     }
     
     // Mejorar experiencia táctil
-    const touchElements = document.querySelectorAll('.btn, .service-card, .stat-card, .testimonial-card');
+    const touchElements = document.querySelectorAll('.btn, .service-card, .stat-card, .testimonial-card, .document-card');
     touchElements.forEach(element => {
         element.addEventListener('touchstart', function() {
             this.style.transform = 'scale(0.98)';
@@ -648,6 +648,22 @@ function initMobileOptimizations() {
         
         element.addEventListener('touchend', function() {
             this.style.transform = '';
+        }, { passive: true });
+    });
+    
+    // Mejorar experiencia específica para botones de documentos
+    const documentButtons = document.querySelectorAll('.download-btn, .view-btn');
+    documentButtons.forEach(button => {
+        button.addEventListener('touchstart', function() {
+            this.style.transform = 'scale(0.97)';
+            this.style.boxShadow = '0 4px 15px rgba(44, 90, 160, 0.3)';
+        }, { passive: true });
+        
+        button.addEventListener('touchend', function() {
+            this.style.transform = 'scale(1)';
+            setTimeout(() => {
+                this.style.boxShadow = '';
+            }, 150);
         }, { passive: true });
     });
 }
