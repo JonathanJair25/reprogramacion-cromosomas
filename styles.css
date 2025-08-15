@@ -2525,7 +2525,7 @@ body {
     }
     
     .document-card {
-        padding: 18px 12px;
+        padding: 20px 12px 24px 12px;
         margin: 0;
         border-radius: 12px;
     }
@@ -2549,8 +2549,10 @@ body {
     
     .document-description {
         font-size: 13px;
-        margin-bottom: 10px;
-        line-height: 1.4;
+        margin-bottom: 12px;
+        line-height: 1.5;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
     }
     
     .document-meta {
