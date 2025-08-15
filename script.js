@@ -13,18 +13,28 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('CromaHeal - Sistema energético cargado correctamente ⚡');
 });
 
-// NAVEGACIÓN PROFESIONAL
+// NAVEGACIÓN PROFESIONAL MEJORADA
 function initNavigation() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
     const header = document.querySelector('.header');
 
-    // Toggle menú móvil
+    // Toggle menú móvil mejorado
     if (hamburger && navMenu) {
-        hamburger.addEventListener('click', function() {
+        hamburger.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
             navMenu.classList.toggle('active');
             hamburger.classList.toggle('active');
+            
+            // Prevenir scroll del body cuando el menú está abierto
+            if (navMenu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
         });
 
         // Cerrar menú al hacer click en enlaces
@@ -32,11 +42,30 @@ function initNavigation() {
             link.addEventListener('click', function() {
                 navMenu.classList.remove('active');
                 hamburger.classList.remove('active');
+                document.body.style.overflow = '';
             });
+        });
+        
+        // Cerrar menú al hacer click fuera
+        document.addEventListener('click', function(e) {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Cerrar menú con tecla Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
         });
     }
 
-    // Navegación suave
+    // Navegación suave mejorada
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -44,7 +73,8 @@ function initNavigation() {
             const targetSection = document.querySelector(targetId);
             
             if (targetSection) {
-                const offsetTop = targetSection.offsetTop - 80;
+                const headerHeight = header ? header.offsetHeight : 80;
+                const offsetTop = targetSection.offsetTop - headerHeight - 20;
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
@@ -535,3 +565,91 @@ keyboardStyle.textContent = `
     }
 `;
 document.head.appendChild(keyboardStyle);
+
+// OPTIMIZACIONES MÓVILES
+function initMobileOptimizations() {
+    // Detectar dispositivos móviles
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    const isTablet = /iPad|Android/i.test(navigator.userAgent) && window.innerWidth >= 768;
+    
+    if (isMobile || window.innerWidth <= 768) {
+        // Reducir partículas en móviles para mejor rendimiento
+        const particles = document.querySelectorAll('.quantum-particle');
+        particles.forEach((particle, index) => {
+            if (index > 8) { // Mantener solo 8 partículas en móvil
+                particle.style.display = 'none';
+            }
+        });
+        
+        // Optimizar animaciones para móviles
+        const style = document.createElement('style');
+        style.textContent = `
+            @media (max-width: 768px) {
+                .quantum-particle {
+                    animation-duration: 12s;
+                    opacity: 0.3;
+                }
+                
+                .energy-wave {
+                    animation-duration: 10s;
+                    opacity: 0.2;
+                }
+                
+                .floating-dna {
+                    animation-duration: 15s;
+                    opacity: 0.4;
+                }
+                
+                .ring-1, .ring-2, .ring-3 {
+                    animation-duration: 20s;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Mejorar touch events
+        document.addEventListener('touchstart', function(e) {
+            // Prevenir zoom en double tap para botones
+            if (e.target.classList.contains('btn') || 
+                e.target.closest('.btn') || 
+                e.target.classList.contains('hamburger')) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+        
+        // Optimizar scroll en móviles
+        let ticking = false;
+        function optimizedScrollHandler() {
+            if (!ticking) {
+                requestAnimationFrame(function() {
+                    // Reducir frecuencia de animaciones durante scroll
+                    const scrollTop = window.pageYOffset;
+                    if (scrollTop > 200) {
+                        document.body.classList.add('scrolling');
+                    } else {
+                        document.body.classList.remove('scrolling');
+                    }
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }
+        
+        window.addEventListener('scroll', optimizedScrollHandler, { passive: true });
+    }
+    
+    // Mejorar experiencia táctil
+    const touchElements = document.querySelectorAll('.btn, .service-card, .stat-card, .testimonial-card');
+    touchElements.forEach(element => {
+        element.addEventListener('touchstart', function() {
+            this.style.transform = 'scale(0.98)';
+        }, { passive: true });
+        
+        element.addEventListener('touchend', function() {
+            this.style.transform = '';
+        }, { passive: true });
+    });
+}
+
+// Inicializar optimizaciones móviles
+initMobileOptimizations();
