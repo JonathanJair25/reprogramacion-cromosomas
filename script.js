@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initStatCounters();
     initEnergyEffects();
     initProcessAnimations();
+    initDocumentAnimations();
     
     console.log('CromaHeal - Sistema energético cargado correctamente ⚡');
 });
@@ -653,3 +654,98 @@ function initMobileOptimizations() {
 
 // Inicializar optimizaciones móviles
 initMobileOptimizations();
+
+// ANIMACIONES DE DOCUMENTOS LEGALES
+function initDocumentAnimations() {
+    // Intersection Observer para documentos
+    const documentsObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                const documentCards = entry.target.querySelectorAll('.document-card');
+                documentCards.forEach(function(card, index) {
+                    setTimeout(function() {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                        
+                        // Activar efectos de icono
+                        const icon = card.querySelector('.document-icon');
+                        if (icon) {
+                            icon.style.transform = 'scale(1) rotate(0deg)';
+                        }
+                    }, index * 200);
+                });
+                
+                // Activar efectos energéticos
+                const floatingDocs = entry.target.querySelectorAll('.floating-document');
+                floatingDocs.forEach(function(doc, index) {
+                    setTimeout(function() {
+                        doc.style.opacity = '1';
+                        doc.style.animationPlayState = 'running';
+                    }, (index + 1) * 500);
+                });
+            }
+        });
+    }, { threshold: 0.2 });
+    
+    const documentsSection = document.querySelector('.legal-documents');
+    if (documentsSection) {
+        documentsObserver.observe(documentsSection);
+        
+        // Inicializar cards ocultas
+        const documentCards = documentsSection.querySelectorAll('.document-card');
+        documentCards.forEach(function(card) {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+            
+            // Inicializar iconos
+            const icon = card.querySelector('.document-icon');
+            if (icon) {
+                icon.style.transform = 'scale(0.8) rotate(-10deg)';
+                icon.style.transition = 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+            }
+        });
+        
+        // Inicializar elementos flotantes ocultos
+        const floatingDocs = documentsSection.querySelectorAll('.floating-document');
+        floatingDocs.forEach(function(doc) {
+            doc.style.opacity = '0';
+            doc.style.animationPlayState = 'paused';
+        });
+    }
+    
+    // Efectos de hover mejorados para botones de documento
+    const downloadBtns = document.querySelectorAll('.download-btn');
+    const viewBtns = document.querySelectorAll('.view-btn');
+    
+    downloadBtns.forEach(function(btn) {
+        btn.addEventListener('mouseenter', function() {
+            this.style.boxShadow = '0 8px 25px rgba(44, 90, 160, 0.3)';
+        });
+        
+        btn.addEventListener('mouseleave', function() {
+            this.style.boxShadow = '';
+        });
+    });
+    
+    viewBtns.forEach(function(btn) {
+        btn.addEventListener('mouseenter', function() {
+            this.style.boxShadow = '0 8px 25px rgba(44, 90, 160, 0.4)';
+        });
+        
+        btn.addEventListener('mouseleave', function() {
+            this.style.boxShadow = '';
+        });
+    });
+    
+    // Tracking de descargas (opcional para analytics)
+    downloadBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            const documentName = this.closest('.document-card').querySelector('.document-title').textContent;
+            console.log('Documento descargado:', documentName);
+            
+            // Mostrar notificación de descarga
+            showNotification(`Descargando: ${documentName}`, 'info');
+        });
+    });
+}
