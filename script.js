@@ -10,9 +10,117 @@ document.addEventListener('DOMContentLoaded', function() {
     initEnergyEffects();
     initProcessAnimations();
     initDocumentAnimations();
+    initPDFHandlers();
     
     console.log('CromaHeal - Sistema energético cargado correctamente ⚡');
 });
+
+// FUNCIÓN PARA MANEJAR PDFs EN MÓVILES
+function initPDFHandlers() {
+    // Detectar si es móvil
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    if (isMobile) {
+        console.log('Dispositivo móvil detectado - Optimizando PDFs');
+        
+        // Agregar indicadores visuales para móviles
+        const viewButtons = document.querySelectorAll('.view-btn');
+        viewButtons.forEach(btn => {
+            const span = btn.querySelector('span');
+            if (span && span.textContent === 'Ver Online') {
+                span.textContent = 'Abrir PDF';
+            }
+            
+            // Agregar tooltip para móviles
+            btn.addEventListener('touchstart', function() {
+                // Feedback visual inmediato
+                this.style.transform = 'scale(0.98)';
+            });
+            
+            btn.addEventListener('touchend', function() {
+                this.style.transform = '';
+            });
+        });
+        
+        // Mostrar mensaje de ayuda específico para móviles
+        const mobileNotice = document.querySelector('.mobile-notice');
+        if (mobileNotice) {
+            mobileNotice.style.display = 'flex';
+            
+            // Detectar tipo de dispositivo para mensaje específico
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+            const noticeText = mobileNotice.querySelector('span');
+            
+            if (isIOS) {
+                noticeText.textContent = 'En iPhone/iPad: Los PDFs se abrirán en Safari o tu app de PDF preferida.';
+            } else {
+                noticeText.textContent = 'En Android: Los PDFs se abrirán en tu aplicación PDF preferida.';
+            }
+        }
+    }
+}
+
+// FUNCIÓN GLOBAL PARA ABRIR PDFs CON MÚLTIPLES FALLBACKS
+function openPDF(url) {
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    
+    if (isMobile) {
+        // Mostrar feedback visual inmediato
+        const btn = event.target.closest('.view-btn');
+        if (btn) {
+            btn.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                btn.style.transform = '';
+            }, 150);
+        }
+        
+        // Para iOS, usar estrategia específica
+        if (isIOS) {
+            // En iOS, intentar abrir en Safari
+            try {
+                const link = document.createElement('a');
+                link.href = url;
+                link.target = '_blank';
+                link.rel = 'noopener noreferrer';
+                
+                // Simular click
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                return false;
+            } catch (e) {
+                // Fallback para iOS
+                window.location.href = url;
+                return false;
+            }
+        } else {
+            // Para Android y otros móviles
+            try {
+                // Estrategia 1: Intentar abrir en nueva ventana
+                const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+                
+                // Verificar si la ventana se abrió correctamente
+                setTimeout(() => {
+                    if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
+                        // Estrategia 2: Navegación directa
+                        window.location.href = url;
+                    }
+                }, 100);
+                
+                return false;
+            } catch (e) {
+                // Estrategia 3: Fallback absoluto
+                window.location.href = url;
+                return false;
+            }
+        }
+    } else {
+        // En desktop, comportamiento normal
+        return true;
+    }
+}
 
 // NAVEGACIÓN PROFESIONAL MEJORADA
 function initNavigation() {
