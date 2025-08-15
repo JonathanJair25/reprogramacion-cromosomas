@@ -3,32 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Reparación Cromosómica | Biomagnetismo Profesional</title>
+    <title>CromaHeal | Terapia de Reprogramación Cromosómica</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header Profesional -->
-    <header class="header">
+    <!-- Header Terapéutico Profesional -->
+    <header class="medical-header" id="medicalHeader">
         <div class="header-container">
-            <div class="logo">
-                <img src="images/logo.png" alt="CromaHeal Logo" class="logo-image">
-                <span class="logo-text">
-                    <span class="logo-main">CromaHeal</span>
-                    <span class="logo-sub">Centro de Biomagnetismo</span>
-                </span>
+            <div class="logo-section">
+                <img src="images/logo.png" alt="CromaHeal" class="logo-image">
+                <div class="brand-info">
+                    <h1 class="brand-name">CromaHeal</h1>
+                    <span class="brand-tagline">Terapia de Reprogramación Cromosómica</span>
+                </div>
             </div>
-            <nav class="nav">
+            
+            <nav class="main-navigation">
                 <ul class="nav-menu">
-                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                    <li><a href="#inicio" class="nav-link active">Inicio</a></li>
                     <li><a href="#servicios" class="nav-link">Servicios</a></li>
-                    <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+                    <li><a href="#terapeuta" class="nav-link">Terapeuta</a></li>
                     <li><a href="#testimonios" class="nav-link">Testimonios</a></li>
                     <li><a href="#documentos" class="nav-link">Documentos</a></li>
                     <li><a href="#contacto" class="nav-link">Contacto</a></li>
                 </ul>
-                <div class="hamburger">
+                
+                <div class="header-actions">
+                    <a href="https://wa.me/52123456789" class="whatsapp-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                    <button class="appointment-btn" onclick="openAppointmentModal()">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Agendar Sesión</span>
+                    </button>
+                </div>
+                
+                <div class="mobile-toggle" id="mobileToggle">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -37,60 +50,102 @@
         </div>
     </header>
 
-    <!-- Hero Section Profesional Optimizado -->
-    <section id="inicio" class="hero">
+    <!-- Hero Section Médico -->
+    <section id="inicio" class="hero-medical">
         <div class="hero-background">
-            <div class="hero-particles"></div>
+            <div class="medical-pattern"></div>
+            <div class="floating-elements">
+                <div class="medical-cross cross-1">
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="medical-cross cross-2">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <div class="medical-cross cross-3">
+                    <i class="fas fa-user-md"></i>
+                </div>
+            </div>
         </div>
+        
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <div class="hero-badge">
-                        <i class="fas fa-star"></i>
-                        <span>Medicina Energética de Vanguardia</span>
+                    <div class="medical-badge">
+                        <i class="fas fa-leaf"></i>
+                        <span>Terapia Energética Profesional</span>
                     </div>
+                    
                     <h1 class="hero-title">
-                        <span class="title-accent">Reparación</span> Cromosómica
-                        <span class="subtitle-professional">y Biomagnetismo Avanzado</span>
+                        <span class="title-main">Reprogramación</span>
+                        <span class="title-sub">Cromosómica</span>
                     </h1>
+                    
                     <p class="hero-description">
-                        Transformamos traumas emocionales y desequilibrios energéticos mediante técnicas 
-                        de biomagnetismo, decretos terapéuticos y terapias de reprogramación celular. 
-                        Una nueva dimensión en la medicina energética.
+                        Especialistas en biomagnetismo y terapias de equilibrio energético. 
+                        Trabajamos con técnicas avanzadas de reprogramación cromosómica para 
+                        restaurar tu bienestar integral y equilibrio natural.
                     </p>
-                    <div class="hero-stats">
+                    
+                    <div class="medical-stats">
                         <div class="stat-item">
-                            <span class="stat-number" data-target="98">0</span>
-                            <span class="stat-label">% Éxito Terapéutico</span>
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-content">
+                                <span class="stat-number" data-target="750">0</span>
+                                <span class="stat-label">Personas Atendidas</span>
+                            </div>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number" data-target="500">0</span>
-                            <span class="stat-label">+ Pacientes Tratados</span>
+                            <div class="stat-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="stat-content">
+                                <span class="stat-number" data-target="94">0</span>
+                                <span class="stat-label">% Satisfacción</span>
+                            </div>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number" data-target="15">0</span>
-                            <span class="stat-label">+ Años de Experiencia</span>
+                            <div class="stat-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="stat-content">
+                                <span class="stat-number" data-target="12">0</span>
+                                <span class="stat-label">Años de Experiencia</span>
+                            </div>
                         </div>
                     </div>
+                    
                     <div class="hero-actions">
-                        <a href="#contacto" class="btn btn-primary">
-                            <i class="fas fa-calendar-alt"></i>
-                            Agendar Consulta
-                        </a>
-                        <a href="#servicios" class="btn btn-secondary">
-                            <i class="fas fa-info-circle"></i>
-                            Conocer Servicios
+                        <button class="btn-primary" onclick="openAppointmentModal()">
+                            <i class="fas fa-calendar-plus"></i>
+                            <span>Agendar Sesión</span>
+                        </button>
+                        <a href="#servicios" class="btn-secondary">
+                            <i class="fas fa-leaf"></i>
+                            <span>Ver Servicios</span>
                         </a>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <div class="hero-logo-center">
-                        <img src="images/logo.png" alt="CromaHeal Logo Principal" class="hero-logo-main">
-                        <div class="logo-glow-center"></div>
-                        <div class="logo-rings">
-                            <div class="ring ring-1"></div>
-                            <div class="ring ring-2"></div>
-                            <div class="ring ring-3"></div>
+                
+                <div class="hero-visual">
+                    <div class="medical-logo-container">
+                        <div class="logo-frame">
+                            <img src="images/logo.png" alt="CromaHeal Logo" class="hero-logo">
+                            <div class="pulse-ring ring-1"></div>
+                            <div class="pulse-ring ring-2"></div>
+                            <div class="pulse-ring ring-3"></div>
+                        </div>
+                        <div class="medical-symbols">
+                            <div class="symbol symbol-1">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <div class="symbol symbol-2">
+                                <i class="fas fa-yin-yang"></i>
+                            </div>
+                            <div class="symbol symbol-3">
+                                <i class="fas fa-atom"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -98,595 +153,351 @@
         </div>
     </section>
 
-    <!-- Servicios Profesionales -->
-    <section id="servicios" class="services">
-        <div class="energy-background">
-            <div class="floating-dna floating-dna-1">
-                <div class="mini-helix">
-                    <div class="mini-strand"></div>
-                    <div class="mini-strand"></div>
-                    <div class="mini-strand"></div>
-                </div>
-            </div>
-            <div class="floating-dna floating-dna-2">
-                <div class="mini-helix">
-                    <div class="mini-strand"></div>
-                    <div class="mini-strand"></div>
-                    <div class="mini-strand"></div>
-                </div>
-            </div>
-            <div class="floating-dna floating-dna-3">
-                <div class="mini-helix">
-                    <div class="mini-strand"></div>
-                    <div class="mini-strand"></div>
-                    <div class="mini-strand"></div>
-                </div>
-            </div>
-            <div class="energy-waves">
-                <div class="wave wave-1"></div>
-                <div class="wave wave-2"></div>
-                <div class="wave wave-3"></div>
-                <div class="wave wave-4"></div>
-            </div>
-        </div>
+    <!-- Servicios Terapéuticos -->
+    <section id="servicios" class="services-medical">
         <div class="container">
             <div class="section-header">
-                <div class="header-decoration">
-                    <div class="dna-icon-left">
-                        <i class="fas fa-dna"></i>
-                    </div>
-                    <div class="section-title-container">
-                        <h2 class="section-title">Servicios Especializados</h2>
-                        <div class="title-underline"></div>
-                    </div>
-                    <div class="dna-icon-right">
-                        <i class="fas fa-dna"></i>
-                    </div>
+                <div class="section-badge">
+                    <i class="fas fa-leaf"></i>
+                    <span>Servicios Terapéuticos</span>
                 </div>
-                <p class="section-subtitle">
-                    Tratamientos avanzados basados en biomagnetismo y reprogramación energética
+                <h2 class="section-title">
+                    <span>Terapias de</span>
+                    <span class="title-accent">Equilibrio Energético</span>
+                </h2>
+                <p class="section-description">
+                    Ofrecemos una gama completa de servicios terapéuticos especializados 
+                    en biomagnetismo y reprogramación cromosómica para tu bienestar integral.
                 </p>
             </div>
+            
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-dna"></i>
                     </div>
-                    <h3 class="service-title">Reparación Cromosómica</h3>
-                    <p class="service-description">
-                        Técnicas avanzadas de reprogramación celular para restaurar el equilibrio 
-                        genético y sanar traumas almacenados a nivel cromosómico.
-                    </p>
-                    <ul class="service-features">
-                        <li>Análisis energético detallado</li>
-                        <li>Reprogramación celular</li>
-                        <li>Sanación de memorias ancestrales</li>
-                    </ul>
+                    <div class="service-content">
+                        <h3 class="service-title">Reprogramación Cromosómica</h3>
+                        <p class="service-description">
+                            Técnica especializada para la reparación y regeneración 
+                            de estructuras celulares mediante biomagnetismo dirigido.
+                        </p>
+                        <ul class="service-benefits">
+                            <li><i class="fas fa-check"></i> Regeneración celular natural</li>
+                            <li><i class="fas fa-check"></i> Equilibrio bioenergético</li>
+                            <li><i class="fas fa-check"></i> Proceso no invasivo</li>
+                        </ul>
+                        <div class="service-duration">
+                            <i class="fas fa-clock"></i>
+                            <span>Duración: 60-90 minutos</span>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-magnet"></i>
+                        <i class="fas fa-yin-yang"></i>
                     </div>
-                    <h3 class="service-title">Biomagnetismo Médico</h3>
-                    <p class="service-description">
-                        Terapia con imanes para restablecer el equilibrio del pH corporal y 
-                        eliminar patógenos que causan enfermedades.
-                    </p>
-                    <ul class="service-features">
-                        <li>Diagnóstico biomagnético</li>
-                        <li>Tratamiento con imanes</li>
-                        <li>Equilibrio energético corporal</li>
-                    </ul>
+                    <div class="service-content">
+                        <h3 class="service-title">Biomagnetismo Equilibrante</h3>
+                        <p class="service-description">
+                            Terapia especializada en equilibrio energético mediante 
+                            campos magnéticos específicos y frecuencias terapéuticas.
+                        </p>
+                        <ul class="service-benefits">
+                            <li><i class="fas fa-check"></i> Reducción de estrés</li>
+                            <li><i class="fas fa-check"></i> Mejora del descanso</li>
+                            <li><i class="fas fa-check"></i> Armonización energética</li>
+                        </ul>
+                        <div class="service-duration">
+                            <i class="fas fa-clock"></i>
+                            <span>Duración: 45-75 minutos</span>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3 class="service-title">Decretos Terapéuticos</h3>
-                    <p class="service-description">
-                        Programación neurolinguística especializada para reprogramar patrones 
-                        de pensamiento y liberar traumas emocionales profundos.
-                    </p>
-                    <ul class="service-features">
-                        <li>Decretos personalizados</li>
-                        <li>Reprogramación mental</li>
-                        <li>Liberación de traumas</li>
-                    </ul>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-heartbeat"></i>
-                    </div>
-                    <h3 class="service-title">Tarjetas Energéticas</h3>
-                    <p class="service-description">
-                        Sistemas de frecuencias cuánticas mediante tarjetas especializadas 
-                        para armonizar el campo energético personal.
-                    </p>
-                    <ul class="service-features">
-                        <li>Frecuencias personalizadas</li>
-                        <li>Armonización energética</li>
-                        <li>Protección áurica</li>
-                    </ul>
-                </div>
-
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-leaf"></i>
                     </div>
-                    <h3 class="service-title">Terapia Holística</h3>
-                    <p class="service-description">
-                        Enfoque integral que combina medicina energética, fitoterapia 
-                        y técnicas de sanación natural para el bienestar completo.
-                    </p>
-                    <ul class="service-features">
-                        <li>Medicina natural integral</li>
-                        <li>Equilibrio mente-cuerpo</li>
-                        <li>Sanación energética</li>
-                    </ul>
+                    <div class="service-content">
+                        <h3 class="service-title">Terapia Energética Integral</h3>
+                        <p class="service-description">
+                            Enfoque holístico para el bienestar integral que combina 
+                            diferentes técnicas terapéuticas energéticas.
+                        </p>
+                        <ul class="service-benefits">
+                            <li><i class="fas fa-check"></i> Bienestar integral</li>
+                            <li><i class="fas fa-check"></i> Equilibrio emocional</li>
+                            <li><i class="fas fa-check"></i> Revitalización natural</li>
+                        </ul>
+                        <div class="service-duration">
+                            <i class="fas fa-clock"></i>
+                            <span>Duración: 60-90 minutos</span>
+                        </div>
+                    </div>
                 </div>
-
+                
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-om"></i>
+                        <i class="fas fa-heart"></i>
                     </div>
-                    <h3 class="service-title">Meditación Cuántica</h3>
-                    <p class="service-description">
-                        Técnicas avanzadas de meditación y conexión cuántica para 
-                        la expansión de la conciencia y sanación profunda.
-                    </p>
-                    <ul class="service-features">
-                        <li>Expansión de conciencia</li>
-                        <li>Sanación cuántica</li>
-                        <li>Conexión espiritual</li>
-                    </ul>
+                    <div class="service-content">
+                        <h3 class="service-title">Armonización Vital</h3>
+                        <p class="service-description">
+                            Protocolo terapéutico para optimizar la energía vital 
+                            y fortalecer los procesos naturales de sanación.
+                        </p>
+                        <ul class="service-benefits">
+                            <li><i class="fas fa-check"></i> Fortalecimiento vital</li>
+                            <li><i class="fas fa-check"></i> Mejora de la vitalidad</li>
+                            <li><i class="fas fa-check"></i> Armonización integral</li>
+                        </ul>
+                        <div class="service-duration">
+                            <i class="fas fa-clock"></i>
+                            <span>Duración: 50-80 minutos</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Estadísticas Energéticas -->
-    <section class="energy-stats">
-        <div class="energy-field-background">
-            <div class="quantum-particles">
-                <div class="particle particle-1"></div>
-                <div class="particle particle-2"></div>
-                <div class="particle particle-3"></div>
-                <div class="particle particle-4"></div>
-                <div class="particle particle-5"></div>
-                <div class="particle particle-6"></div>
-            </div>
-            <div class="energy-grid">
-                <div class="grid-line grid-h-1"></div>
-                <div class="grid-line grid-h-2"></div>
-                <div class="grid-line grid-v-1"></div>
-                <div class="grid-line grid-v-2"></div>
-            </div>
-        </div>
+    <!-- Sección del Terapeuta -->
+    <section id="terapeuta" class="doctor-profile">
         <div class="container">
-            <div class="stats-content">
-                <div class="stats-header">
-                    <h2 class="stats-title">Impacto Energético Comprobado</h2>
-                    <p class="stats-subtitle">Resultados medibles en la transformación de vida de nuestros pacientes</p>
+            <div class="doctor-content">
+                <div class="doctor-image">
+                    <div class="image-frame">
+                        <img src="images/logo.png" alt="Terapeuta Especialista" class="doctor-photo">
+                        <div class="medical-credentials">
+                            <div class="credential-badge">
+                                <i class="fas fa-leaf"></i>
+                                <span>Certificado</span>
+                            </div>
+                            <div class="credential-badge">
+                                <i class="fas fa-yin-yang"></i>
+                                <span>Especialista</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-spa"></i>
-                            <div class="icon-glow"></div>
+                
+                <div class="doctor-info">
+                    <div class="doctor-header">
+                        <div class="doctor-badge">
+                            <i class="fas fa-user"></i>
+                            <span>Terapeuta Especialista</span>
                         </div>
-                        <div class="stat-number-large" data-target="2500">0</div>
-                        <div class="stat-label-large">Sesiones de Sanación</div>
-                        <div class="stat-description">Más de 2,500 sesiones exitosas de reprogramación cromosómica y biomagnetismo</div>
+                        <h2 class="doctor-name">
+                            <span>Terapeuta Profesional</span>
+                            <span class="doctor-specialty">Biomagnetismo y Reprogramación Cromosómica</span>
+                        </h2>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-heartbeat"></i>
-                            <div class="icon-pulse"></div>
-                        </div>
-                        <div class="stat-number-large" data-target="95">0</div>
-                        <div class="stat-label-large">% Mejora Energética</div>
-                        <div class="stat-description">Incremento promedio en los niveles de energía vital de nuestros pacientes</div>
+                    
+                    <div class="doctor-description">
+                        <p>
+                            Terapeuta especialista con más de 12 años de experiencia en biomagnetismo 
+                            y terapias de reprogramación cromosómica. Pionero en el desarrollo de 
+                            protocolos avanzados de equilibrio energético y bienestar integral.
+                        </p>
+                        <p>
+                            Especializado en terapias energéticas y técnicas de biomagnetismo. 
+                            Ha atendido exitosamente a más de 750 personas con diversos padecimientos 
+                            mediante técnicas naturales y no invasivas.
+                        </p>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-dna"></i>
-                            <div class="icon-rotate"></div>
+                    
+                    <div class="doctor-achievements">
+                        <h3>Certificaciones y Experiencia</h3>
+                        <div class="achievements-grid">
+                            <div class="achievement-item">
+                                <i class="fas fa-certificate"></i>
+                                <div class="achievement-text">
+                                    <span class="achievement-title">Biomagnetismo Terapéutico</span>
+                                    <span class="achievement-institution">Instituto de Terapias Energéticas</span>
+                                </div>
+                            </div>
+                            <div class="achievement-item">
+                                <i class="fas fa-leaf"></i>
+                                <div class="achievement-text">
+                                    <span class="achievement-title">Reprogramación Cromosómica</span>
+                                    <span class="achievement-institution">Centro de Medicina Integrativa</span>
+                                </div>
+                            </div>
+                            <div class="achievement-item">
+                                <i class="fas fa-yin-yang"></i>
+                                <div class="achievement-text">
+                                    <span class="achievement-title">Terapias Energéticas</span>
+                                    <span class="achievement-institution">Academia de Medicina Natural</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="stat-number-large" data-target="150">0</div>
-                        <div class="stat-label-large">Traumas Sanados</div>
-                        <div class="stat-description">Traumas ancestrales y cromosómicos completamente reprogramados</div>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-infinity"></i>
-                            <div class="icon-infinity"></div>
-                        </div>
-                        <div class="stat-number-large" data-target="100">0</div>
-                        <div class="stat-label-large">% Satisfacción</div>
-                        <div class="stat-description">Índice de satisfacción total en transformación de vida y bienestar</div>
+                    
+                    <div class="doctor-contact">
+                        <button class="btn-primary" onclick="openAppointmentModal()">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Agendar Sesión</span>
+                        </button>
+                        <a href="#contacto" class="btn-secondary">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contactar Directamente</span>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sobre Nosotros -->
-    <section id="nosotros" class="about">
-        <div class="about-energy-field">
-            <div class="energy-spiral">
-                <div class="spiral-arm spiral-1"></div>
-                <div class="spiral-arm spiral-2"></div>
-                <div class="spiral-arm spiral-3"></div>
-            </div>
-            <div class="floating-logo">
-                <img src="images/logo.png" alt="CromaHeal Floating" class="floating-logo-img">
-            </div>
-        </div>
-        <div class="container">
-            <div class="about-content">
-                <div class="about-image">
-                    <div class="professional-photo">
-                        <div class="photo-placeholder">
-                            <i class="fas fa-user-md"></i>
-                        </div>
-                        <div class="photo-aura">
-                            <div class="aura-ring aura-1"></div>
-                            <div class="aura-ring aura-2"></div>
-                            <div class="aura-ring aura-3"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-text">
-                    <h2 class="about-title">
-                        <span class="title-highlight">Excelencia</span> en Medicina Energética
-                    </h2>
-                    <p class="about-description">
-                        Con más de 15 años de experiencia en biomagnetismo médico y terapias de 
-                        reprogramación celular, nuestro centro se especializa en tratamientos 
-                        innovadores que integran la ciencia moderna con la sabiduría energética ancestral.
-                    </p>
-                    <div class="about-highlights">
-                        <div class="highlight-item">
-                            <div class="highlight-icon">
-                                <i class="fas fa-atom"></i>
-                            </div>
-                            <div class="highlight-text">
-                                <h4>Medicina Cuántica</h4>
-                                <p>Trabajamos a nivel cuántico para reprogramar patrones energéticos profundos</p>
-                            </div>
-                        </div>
-                        <div class="highlight-item">
-                            <div class="highlight-icon">
-                                <i class="fas fa-hands"></i>
-                            </div>
-                            <div class="highlight-text">
-                                <h4>Sanación Integral</h4>
-                                <p>Enfoque holístico que abarca mente, cuerpo, espíritu y campo energético</p>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <br>
-                    <div class="credentials">
-                        <div class="credential-item">
-                            <i class="fas fa-certificate"></i>
-                            <div class="credential-text">
-                                <h4>Certificación Internacional</h4>
-                                <p>Biomagnetismo Médico - Instituto Dr. Isaac Goiz</p>
-                            </div>
-                        </div>
-                        <div class="credential-item">
-                            <i class="fas fa-award"></i>
-                            <div class="credential-text">
-                                <h4>Especialización Avanzada</h4>
-                                <p>Reprogramación Cromosómica y Medicina Cuántica</p>
-                            </div>
-                        </div>
-                        <div class="credential-item">
-                            <i class="fas fa-graduation-cap"></i>
-                            <div class="credential-text">
-                                <h4>Formación Continua</h4>
-                                <p>Actualización constante en técnicas de vanguardia</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Proceso de Sanación -->
-    <section class="healing-process">
-        <div class="process-background">
-            <div class="dna-chain">
-                <div class="chain-segment segment-1">
-                    <div class="nucleotide nucleotide-a"></div>
-                    <div class="nucleotide nucleotide-t"></div>
-                </div>
-                <div class="chain-segment segment-2">
-                    <div class="nucleotide nucleotide-g"></div>
-                    <div class="nucleotide nucleotide-c"></div>
-                </div>
-                <div class="chain-segment segment-3">
-                    <div class="nucleotide nucleotide-a"></div>
-                    <div class="nucleotide nucleotide-t"></div>
-                </div>
-            </div>
-            <div class="energy-constellation">
-                <div class="constellation-dot dot-1"></div>
-                <div class="constellation-dot dot-2"></div>
-                <div class="constellation-dot dot-3"></div>
-                <div class="constellation-dot dot-4"></div>
-                <div class="constellation-line line-1"></div>
-                <div class="constellation-line line-2"></div>
-                <div class="constellation-line line-3"></div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="process-header">
-                <h2 class="process-title">Tu Proceso de <span class="title-gradient">Transformación Energética</span></h2>
-                <p class="process-subtitle">Un viaje guiado hacia la sanación cromosómica y el equilibrio energético total</p>
-            </div>
-            <div class="process-steps">
-                <div class="step-card">
-                    <div class="step-number">
-                        <span>01</span>
-                        <div class="number-glow"></div>
-                    </div>
-                    <div class="step-content">
-                        <div class="step-icon">
-                            <i class="fas fa-search"></i>
-                            <img src="images/logo.png" alt="CromaHeal" class="step-logo">
-                        </div>
-                        <h3 class="step-title">Diagnóstico Energético</h3>
-                        <p class="step-description">
-                            Análisis profundo de tu campo energético, identificación de bloqueos 
-                            cromosómicos y mapeo de traumas ancestrales almacenados en tu ADN.
-                        </p>
-                    </div>
-                    <div class="step-connector">
-                        <div class="connector-line"></div>
-                        <div class="connector-energy"></div>
-                    </div>
-                </div>
-
-                <div class="step-card">
-                    <div class="step-number">
-                        <span>02</span>
-                        <div class="number-glow"></div>
-                    </div>
-                    <div class="step-content">
-                        <div class="step-icon">
-                            <i class="fas fa-magnet"></i>
-                            <img src="images/logo.png" alt="CromaHeal" class="step-logo">
-                        </div>
-                        <h3 class="step-title">Biomagnetismo Médico</h3>
-                        <p class="step-description">
-                            Aplicación de imanes de alta potencia para equilibrar el pH corporal, 
-                            eliminar patógenos y restaurar el flujo energético natural.
-                        </p>
-                    </div>
-                    <div class="step-connector">
-                        <div class="connector-line"></div>
-                        <div class="connector-energy"></div>
-                    </div>
-                </div>
-
-                <div class="step-card">
-                    <div class="step-number">
-                        <span>03</span>
-                        <div class="number-glow"></div>
-                    </div>
-                    <div class="step-content">
-                        <div class="step-icon">
-                            <i class="fas fa-dna"></i>
-                            <img src="images/logo.png" alt="CromaHeal" class="step-logo">
-                        </div>
-                        <h3 class="step-title">Reprogramación Cromosómica</h3>
-                        <p class="step-description">
-                            Técnicas avanzadas de reprogramación celular que transforman 
-                            información genética limitante en códigos de salud y abundancia.
-                        </p>
-                    </div>
-                    <div class="step-connector">
-                        <div class="connector-line"></div>
-                        <div class="connector-energy"></div>
-                    </div>
-                </div>
-
-                <div class="step-card">
-                    <div class="step-number">
-                        <span>04</span>
-                        <div class="number-glow"></div>
-                    </div>
-                    <div class="step-content">
-                        <div class="step-icon">
-                            <i class="fas fa-infinity"></i>
-                            <img src="images/logo.png" alt="CromaHeal" class="step-logo">
-                        </div>
-                        <h3 class="step-title">Integración y Mantenimiento</h3>
-                        <p class="step-description">
-                            Seguimiento energético, tarjetas cuánticas personalizadas y 
-                            decretos terapéuticos para mantener tu nueva frecuencia vibratoria.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonios -->
-    <section id="testimonios" class="testimonials">
+    <!-- Testimonios de Pacientes -->
+    <section id="testimonios" class="testimonials-medical">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Testimonios de Pacientes</h2>
-                <p class="section-subtitle">
-                    Experiencias reales de transformación y sanación
+                <div class="section-badge">
+                    <i class="fas fa-quote-right"></i>
+                    <span>Testimonios</span>
+                </div>
+                <h2 class="section-title">
+                    <span>Experiencias de</span>
+                    <span class="title-accent">Nuestros Pacientes</span>
+                </h2>
+                <p class="section-description">
+                    Conozca las experiencias reales de pacientes que han transformado 
+                    su salud mediante nuestros tratamientos especializados.
                 </p>
             </div>
+            
             <div class="testimonials-grid">
                 <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p class="testimonial-text">
-                            "Después de años de terapias convencionales, la reparación cromosómica 
-                            fue lo que finalmente me ayudó a sanar traumas profundos. El cambio 
-                            ha sido extraordinario."
-                        </p>
-                        <div class="testimonial-author">
-                            <h4>María González</h4>
-                            <span>Paciente - Trauma Ancestral</span>
+                    <div class="testimonial-header">
+                        <div class="patient-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="patient-info">
+                            <h4 class="patient-name">María González</h4>
+                            <span class="patient-condition">Estrés Crónico</span>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
                         </div>
                     </div>
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="testimonial-content">
+                        <p>
+                            "Después de años luchando contra el estrés crónico, encontré en 
+                            CromaHeal la solución que tanto buscaba. Las terapias de 
+                            biomagnetismo me devolvieron la tranquilidad y vitalidad."
+                        </p>
+                    </div>
+                    <div class="testimonial-footer">
+                        <div class="treatment-info">
+                            <i class="fas fa-calendar"></i>
+                            <span>8 sesiones</span>
+                        </div>
+                        <div class="improvement-rate">
+                            <i class="fas fa-chart-line"></i>
+                            <span>95% mejora</span>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p class="testimonial-text">
-                            "El biomagnetismo médico eliminó una infección crónica que tenía años. 
-                            El enfoque profesional y los resultados hablan por sí solos."
-                        </p>
-                        <div class="testimonial-author">
-                            <h4>Carlos Ramírez</h4>
-                            <span>Paciente - Biomagnetismo</span>
+                    <div class="testimonial-header">
+                        <div class="patient-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="patient-info">
+                            <h4 class="patient-name">Carlos Mendoza</h4>
+                            <span class="patient-condition">Dolores Crónicos</span>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
                         </div>
                     </div>
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="testimonial-content">
+                        <p>
+                            "Los dolores que me acompañaron por años desaparecieron 
+                            completamente después del tratamiento. El terapeuta es excepcional 
+                            y su metodología realmente funciona."
+                        </p>
+                    </div>
+                    <div class="testimonial-footer">
+                        <div class="treatment-info">
+                            <i class="fas fa-calendar"></i>
+                            <span>6 sesiones</span>
+                        </div>
+                        <div class="improvement-rate">
+                            <i class="fas fa-chart-line"></i>
+                            <span>100% mejora</span>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p class="testimonial-text">
-                            "Las tarjetas energéticas han transformado mi campo áurico. Siento una 
-                            protección y armonía que nunca había experimentado antes."
-                        </p>
-                        <div class="testimonial-author">
-                            <h4>Ana Martínez</h4>
-                            <span>Paciente - Terapia Energética</span>
+                    <div class="testimonial-header">
+                        <div class="patient-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="patient-info">
+                            <h4 class="patient-name">Ana Patricia</h4>
+                            <span class="patient-condition">Desequilibrio Energético</span>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
                         </div>
                     </div>
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="testimonial-content">
+                        <p>
+                            "Las terapias de equilibrio energético me ayudaron enormemente 
+                            con mi bienestar general. Ahora puedo dormir bien y mi calidad 
+                            de vida mejoró significativamente."
+                        </p>
+                    </div>
+                    <div class="testimonial-footer">
+                        <div class="treatment-info">
+                            <i class="fas fa-calendar"></i>
+                            <span>10 sesiones</span>
+                        </div>
+                        <div class="improvement-rate">
+                            <i class="fas fa-chart-line"></i>
+                            <span>92% mejora</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contacto -->
-    <section id="contacto" class="contact">
+    <!-- Documentos Terapéuticos -->
+    <section id="documentos" class="documents-medical">
         <div class="container">
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h2 class="contact-title">Agenda tu Consulta</h2>
-                    <p class="contact-description">
-                        Inicia tu proceso de transformación y sanación. Contáctanos para 
-                        una evaluación personalizada.
-                    </p>
-                    <div class="contact-methods">
-                        <div class="contact-method">
-                            <i class="fas fa-phone"></i>
-                            <div class="method-info">
-                                <h4>Teléfono</h4>
-                                <p>+52 555 123 4567</p>
-                            </div>
-                        </div>
-                        <div class="contact-method">
-                            <i class="fas fa-envelope"></i>
-                            <div class="method-info">
-                                <h4>Email</h4>
-                                <p>contacto@cromaheal.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-method">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div class="method-info">
-                                <h4>Ubicación</h4>
-                                <p>Centro Médico Profesional<br>Ciudad de México</p>
-                            </div>
-                        </div>
-                        <div class="contact-method">
-                            <i class="fas fa-clock"></i>
-                            <div class="method-info">
-                                <h4>Horarios</h4>
-                                <p>Lun - Vie: 9:00 - 18:00<br>Sáb: 9:00 - 14:00</p>
-                            </div>
-                        </div>
-                    </div>
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Documentación</span>
                 </div>
-                <div class="contact-form-container">
-                    <form id="contact-form" class="contact-form">
-                        <div class="form-group">
-                            <label for="name">Nombre Completo</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Correo Electrónico</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Teléfono</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Servicio de Interés</label>
-                            <select id="service" name="service">
-                                <option value="">Selecciona un servicio</option>
-                                <option value="cromosomas">Reparación Cromosómica</option>
-                                <option value="biomagnetismo">Biomagnetismo Médico</option>
-                                <option value="decretos">Decretos Terapéuticos</option>
-                                <option value="tarjetas">Tarjetas Energéticas</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Mensaje</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Describe brevemente tu situación o consulta..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-full">
-                            <i class="fas fa-paper-plane"></i>
-                            Enviar Consulta
-                        </button>
-                    </form>
-                </div>
+                <h2 class="section-title">
+                    <span>Documentos</span>
+                    <span class="title-accent">Importantes</span>
+                </h2>
+                <p class="section-description">
+                    Acceda a toda la documentación necesaria para sus terapias 
+                    y conozca nuestras políticas de privacidad y consentimiento.
+                </p>
             </div>
-        </div>
-    </section>
-
-    <!-- Documentos Legales -->
-    <section class="legal-documents" id="documentos">
-        <div class="container">
-            <div class="header-decoration">
-                <div class="dna-icon-left">
-                    <i class="fas fa-file-medical"></i>
-                </div>
-                <h2 class="section-title">Documentos Legales</h2>
-                <div class="dna-icon-right">
-                    <i class="fas fa-file-medical"></i>
-                </div>
-            </div>
-            <p class="section-subtitle">
-                Información importante sobre nuestros servicios y políticas de privacidad
-            </p>
-
+            
             <div class="documents-grid">
                 <div class="document-card">
                     <div class="document-icon">
@@ -695,130 +506,291 @@
                     <div class="document-content">
                         <h3 class="document-title">Aviso de Privacidad</h3>
                         <p class="document-description">
-                            Conoce cómo protegemos y manejamos tu información personal en nuestros servicios de terapia holística.
+                            Conozca cómo protegemos y manejamos su información personal 
+                            en nuestros servicios de terapia holística y energética.
                         </p>
-                        <div class="document-meta">
-                            <span class="document-type">
-                                <i class="fas fa-file-pdf"></i> PDF
-                            </span>
-                            <span class="document-size">Documento Legal</span>
+                        <div class="document-details">
+                            <span class="document-type">PDF</span>
+                            <span class="document-size">1.2 MB</span>
+                            <span class="document-updated">Actualizado: Dic 2024</span>
                         </div>
-                    </div>
-                    <div class="document-actions">
                         <a href="documentos/Aviso de Privacidad para Servicios de Terapia Holística.pdf" 
-                           download="Aviso_Privacidad_CromaHeal.pdf"
-                           class="btn btn-outline download-btn">
+                           class="document-download" target="_blank">
                             <i class="fas fa-download"></i>
-                            <span>Descargar</span>
-                        </a>
-                        <a href="documentos/Aviso de Privacidad para Servicios de Terapia Holística.pdf" 
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           class="btn btn-primary view-btn"
-                           onclick="return openPDF(this.href)">
-                            <i class="fas fa-eye"></i>
-                            <span>Ver Online</span>
+                            <span>Descargar Documento</span>
                         </a>
                     </div>
                 </div>
-
+                
                 <div class="document-card">
                     <div class="document-icon">
-                        <i class="fas fa-user-check"></i>
+                        <i class="fas fa-file-contract"></i>
                     </div>
                     <div class="document-content">
                         <h3 class="document-title">Consentimiento Informado</h3>
                         <p class="document-description">
-                            Documento que establece los términos, procedimientos y condiciones de nuestras terapias energéticas.
+                            Documento de consentimiento informado para terapias de 
+                            biomagnetismo y reprogramación cromosómica.
                         </p>
-                        <div class="document-meta">
-                            <span class="document-type">
-                                <i class="fas fa-file-pdf"></i> PDF
-                            </span>
-                            <span class="document-size">Documento Legal</span>
+                        <div class="document-details">
+                            <span class="document-type">PDF</span>
+                            <span class="document-size">950 KB</span>
+                            <span class="document-updated">Actualizado: Dic 2024</span>
                         </div>
-                    </div>
-                    <div class="document-actions">
                         <a href="documentos/CONCENTIMIENTO INFORMADO PARA TERAPIAS.pdf" 
-                           download="Consentimiento_Informado_CromaHeal.pdf"
-                           class="btn btn-outline download-btn">
+                           class="document-download" target="_blank">
                             <i class="fas fa-download"></i>
-                            <span>Descargar</span>
-                        </a>
-                        <a href="documentos/CONCENTIMIENTO INFORMADO PARA TERAPIAS.pdf" 
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           class="btn btn-primary view-btn"
-                           onclick="return openPDF(this.href)">
-                            <i class="fas fa-eye"></i>
-                            <span>Ver Online</span>
+                            <span>Descargar Documento</span>
                         </a>
                     </div>
-                </div>
-            </div>
-
-            <div class="documents-notice">
-                <div class="notice-icon">
-                    <i class="fas fa-info-circle"></i>
-                </div>
-                <div class="notice-content">
-                    <h4>Información Importante</h4>
-                    <p>
-                        Estos documentos contienen información esencial sobre nuestros servicios. 
-                        Te recomendamos leerlos antes de tu primera consulta para entender completamente 
-                        nuestras políticas y procedimientos.
-                    </p>
-                    <div class="mobile-notice">
-                        <i class="fas fa-mobile-alt"></i>
-                        <span>En móviles: Los documentos se abrirán automáticamente en tu aplicación PDF preferida.</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Efectos energéticos para la sección -->
-            <div class="document-energy-effects">
-                <div class="floating-document doc-1">
-                    <i class="fas fa-file-medical"></i>
-                </div>
-                <div class="floating-document doc-2">
-                    <i class="fas fa-certificate"></i>
-                </div>
-                <div class="document-waves">
-                    <div class="wave-1"></div>
-                    <div class="wave-2"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
+    <!-- Contacto y Ubicación -->
+    <section id="contacto" class="contact-medical">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="images/logo.png" alt="CromaHeal Logo" class="footer-logo-image">
-                    <span class="footer-text">
-                        <span class="footer-main">CromaHeal</span>
-                        <span class="footer-sub">Centro de Biomagnetismo</span>
-                    </span>
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Contacto</span>
                 </div>
-                <div class="footer-links">
-                    <a href="#inicio">Inicio</a>
-                    <a href="#servicios">Servicios</a>
-                    <a href="#nosotros">Nosotros</a>
-                    <a href="#contacto">Contacto</a>
+                <h2 class="section-title">
+                    <span>Agenda tu</span>
+                    <span class="title-accent">Sesión Terapéutica</span>
+                </h2>
+                <p class="section-description">
+                    Estamos aquí para ayudarte en tu camino hacia el bienestar integral. 
+                    Contáctanos para agendar tu sesión terapéutica personalizada.
+                </p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-section">
+                        <h3>Información de Contacto</h3>
+                        <div class="contact-items">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <span class="contact-label">Teléfono Principal</span>
+                                    <span class="contact-value">+52 (123) 456-7890</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <span class="contact-label">WhatsApp</span>
+                                    <span class="contact-value">+52 (123) 456-7891</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <span class="contact-label">Email</span>
+                                    <span class="contact-value">contacto@cromaheal.com</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <span class="contact-label">Ubicación</span>
+                                    <span class="contact-value">Av. Bienestar 123, Col. Armonía<br>Ciudad de México, CP 12345</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="schedule-section">
+                        <h3>Horarios de Atención</h3>
+                        <div class="schedule-grid">
+                            <div class="schedule-item">
+                                <span class="schedule-day">Lunes - Viernes</span>
+                                <span class="schedule-time">8:00 AM - 7:00 PM</span>
+                            </div>
+                            <div class="schedule-item">
+                                <span class="schedule-day">Sábados</span>
+                                <span class="schedule-time">9:00 AM - 3:00 PM</span>
+                            </div>
+                            <div class="schedule-item emergency">
+                                <span class="schedule-day">Urgencias</span>
+                                <span class="schedule-time">24 horas</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="footer-social">
-                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                
+                <div class="appointment-form">
+                    <div class="form-header">
+                        <h3>Agendar Sesión</h3>
+                        <p>Complete el formulario para solicitar su cita terapéutica</p>
+                    </div>
+                    
+                    <form class="medical-form" id="appointmentForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="patientName">Nombre Completo</label>
+                                <input type="text" id="patientName" name="patientName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="patientPhone">Teléfono</label>
+                                <input type="tel" id="patientPhone" name="patientPhone" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="patientEmail">Email</label>
+                                <input type="email" id="patientEmail" name="patientEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="preferredDate">Fecha Preferida</label>
+                                <input type="date" id="preferredDate" name="preferredDate" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="serviceType">Tipo de Terapia</label>
+                            <select id="serviceType" name="serviceType" required>
+                                <option value="">Seleccione una terapia</option>
+                                <option value="cromosómica">Reprogramación Cromosómica</option>
+                                <option value="biomagnetismo">Biomagnetismo Equilibrante</option>
+                                <option value="energética">Terapia Energética Integral</option>
+                                <option value="armonización">Armonización Vital</option>
+                                <option value="evaluación">Evaluación Inicial</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="symptoms">Motivo de Consulta</label>
+                            <textarea id="symptoms" name="symptoms" rows="4" 
+                                    placeholder="Describa brevemente el motivo de su consulta..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary submit-btn">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Enviar Solicitud</span>
+                        </button>
+                    </form>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Footer Terapéutico -->
+    <footer class="medical-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="CromaHeal" class="footer-logo-img">
+                        <div class="footer-brand">
+                            <h3>CromaHeal</h3>
+                            <p>Terapia de Reprogramación Cromosómica</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Comprometidos con tu bienestar integral, ofrecemos las terapias 
+                        más avanzadas en biomagnetismo y reprogramación cromosómica.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Servicios Terapéuticos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#servicios">Reprogramación Cromosómica</a></li>
+                        <li><a href="#servicios">Biomagnetismo Equilibrante</a></li>
+                        <li><a href="#servicios">Terapia Energética Integral</a></li>
+                        <li><a href="#servicios">Armonización Vital</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Información</h4>
+                    <ul class="footer-links">
+                        <li><a href="#terapeuta">Nuestro Terapeuta</a></li>
+                        <li><a href="#testimonios">Testimonios</a></li>
+                        <li><a href="#documentos">Documentos</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <div class="emergency-contact">
+                        <div class="emergency-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>+52 (123) 456-7890</span>
+                        </div>
+                        <div class="emergency-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>contacto@cromaheal.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2025 CromaHeal. Todos los derechos reservados. | Medicina Energética Profesional</p>
+                <div class="footer-copyright">
+                    <p>&copy; 2024 CromaHeal. Todos los derechos reservados.</p>
+                </div>
+                <div class="footer-legal">
+                    <a href="#privacy">Aviso de Privacidad</a>
+                    <a href="#terms">Términos y Condiciones</a>
+                </div>
             </div>
         </div>
     </footer>
+
+    <!-- Modal de Cita -->
+    <div class="modal-overlay" id="appointmentModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Agendar Sesión Terapéutica</h3>
+                <button class="modal-close" onclick="closeAppointmentModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="modal-form">
+                    <div class="form-group">
+                        <label>Nombre Completo</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Teléfono</label>
+                        <input type="tel" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Tipo de Terapia</label>
+                        <select required>
+                            <option value="">Seleccione...</option>
+                            <option>Reprogramación Cromosómica</option>
+                            <option>Biomagnetismo Equilibrante</option>
+                            <option>Terapia Energética Integral</option>
+                            <option>Evaluación Inicial</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Confirmar Sesión</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
