@@ -1142,7 +1142,7 @@ body {
 .highlight-icon {
     width: 50px;
     height: 50px;
-    background: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -1150,7 +1150,34 @@ body {
     color: var(--white);
     font-size: 20px;
     flex-shrink: 0;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(44, 90, 160, 0.3);
+    transition: all 0.3s ease;
 }
+
+.highlight-icon::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 13px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.highlight-item:hover .highlight-icon::before {
+    opacity: 0.5;
+}
+
+.highlight-icon i {
+    font-size: 20px;
+    color: white;
+    z-index: 1;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Iconos FontAwesome en blanco para los servicios */
 
 .highlight-text h4 {
     font-weight: 600;
@@ -2013,6 +2040,12 @@ body {
         width: 45px;
         height: 45px;
         font-size: 18px;
+        border-radius: 10px;
+        box-shadow: 0 3px 12px rgba(44, 90, 160, 0.4);
+    }
+    
+    .highlight-icon i {
+        font-size: 18px;
     }
     
     .highlight-text h4 {
@@ -2443,6 +2476,13 @@ body {
         width: 40px;
         height: 40px;
         font-size: 16px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(44, 90, 160, 0.5);
+    }
+    
+    .highlight-icon i {
+        font-size: 16px;
+        color: white !important;
     }
     
     .highlight-text h4 {
