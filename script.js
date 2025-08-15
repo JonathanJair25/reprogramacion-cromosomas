@@ -7,8 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
     initAnimations();
     initContactForm();
     initStatCounters();
+    initEnergyEffects();
+    initProcessAnimations();
     
-    console.log('CromaHeal - Sistema cargado correctamente');
+    console.log('CromaHeal - Sistema energético cargado correctamente ⚡');
 });
 
 // NAVEGACIÓN PROFESIONAL
@@ -147,7 +149,7 @@ function initAnimations() {
 // CONTADORES ANIMADOS
 function initStatCounters() {
     window.animateCounters = function() {
-        const counters = document.querySelectorAll('.stat-number');
+        const counters = document.querySelectorAll('.stat-number, .stat-number-large');
         
         counters.forEach(function(counter) {
             const target = parseInt(counter.getAttribute('data-target'));
@@ -158,16 +160,151 @@ function initStatCounters() {
             const updateCounter = function() {
                 if (current < target) {
                     current += step;
-                    counter.textContent = Math.floor(current);
+                    if (counter.classList.contains('stat-number-large')) {
+                        // Para números grandes, agregar formato especial
+                        if (target >= 1000) {
+                            counter.textContent = Math.floor(current).toLocaleString();
+                        } else {
+                            counter.textContent = Math.floor(current);
+                        }
+                    } else {
+                        counter.textContent = Math.floor(current);
+                    }
                     requestAnimationFrame(updateCounter);
                 } else {
-                    counter.textContent = target;
+                    if (counter.classList.contains('stat-number-large')) {
+                        if (target >= 1000) {
+                            counter.textContent = target.toLocaleString();
+                        } else {
+                            counter.textContent = target;
+                        }
+                    } else {
+                        counter.textContent = target;
+                    }
                 }
             };
             
             updateCounter();
         });
     };
+    
+    // Observar también la nueva sección de estadísticas energéticas
+    const energyStatsObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                // Animar contadores de estadísticas energéticas
+                const energyCounters = entry.target.querySelectorAll('.stat-number-large');
+                energyCounters.forEach(function(counter) {
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    const duration = 3000; // 3 segundos para números más grandes
+                    const step = target / (duration / 16);
+                    let current = 0;
+                    
+                    const updateEnergyCounter = function() {
+                        if (current < target) {
+                            current += step;
+                            counter.textContent = Math.floor(current);
+                            requestAnimationFrame(updateEnergyCounter);
+                        } else {
+                            counter.textContent = target;
+                        }
+                    };
+                    
+                    updateEnergyCounter();
+                });
+                
+                // Activar animaciones de partículas cuánticas
+                activateQuantumParticles();
+            }
+        });
+    }, { threshold: 0.3 });
+    
+    const energyStatsSection = document.querySelector('.energy-stats');
+    if (energyStatsSection) {
+        energyStatsObserver.observe(energyStatsSection);
+    }
+}
+
+// EFECTOS CUÁNTICOS ESPECIALES
+function activateQuantumParticles() {
+    const particles = document.querySelectorAll('.particle');
+    particles.forEach(function(particle, index) {
+        setTimeout(function() {
+            particle.style.animationPlayState = 'running';
+            particle.style.opacity = '1';
+        }, index * 200);
+    });
+}
+
+// EFECTOS ENERGÉTICOS AVANZADOS
+function initEnergyEffects() {
+    // Efecto de ondas energéticas en scroll
+    window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        const energyWaves = document.querySelectorAll('.wave');
+        
+        energyWaves.forEach(function(wave, index) {
+            const speed = (index + 1) * 0.5;
+            wave.style.transform = `scale(${1 + scrolled * 0.0001 * speed})`;
+        });
+        
+        // Efecto paralaje en elementos energéticos
+        const floatingElements = document.querySelectorAll('.floating-dna, .floating-logo');
+        floatingElements.forEach(function(element, index) {
+            const speed = (index + 1) * 0.3;
+            element.style.transform = `translateY(${scrolled * speed * 0.1}px)`;
+        });
+    });
+    
+    // Activar efectos de aura en hover
+    const serviceCards = document.querySelectorAll('.service-card');
+    serviceCards.forEach(function(card) {
+        card.addEventListener('mouseenter', function() {
+            this.style.boxShadow = '0 20px 40px rgba(44, 90, 160, 0.3)';
+            this.style.borderColor = 'var(--primary-color)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.boxShadow = 'var(--shadow-md)';
+            this.style.borderColor = 'transparent';
+        });
+    });
+}
+
+// ANIMACIONES DE PROCESO DE SANACIÓN
+function initProcessAnimations() {
+    const processObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                const stepCards = entry.target.querySelectorAll('.step-card');
+                stepCards.forEach(function(card, index) {
+                    setTimeout(function() {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                        
+                        // Activar efectos de flujo de energía
+                        const connectorEnergy = card.querySelector('.connector-energy');
+                        if (connectorEnergy) {
+                            connectorEnergy.style.animationPlayState = 'running';
+                        }
+                    }, index * 200);
+                });
+            }
+        });
+    }, { threshold: 0.2 });
+    
+    const processSection = document.querySelector('.healing-process');
+    if (processSection) {
+        processObserver.observe(processSection);
+        
+        // Inicializar cards ocultas
+        const stepCards = processSection.querySelectorAll('.step-card');
+        stepCards.forEach(function(card) {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+        });
+    }
 }
 
 // FORMULARIO DE CONTACTO PROFESIONAL
