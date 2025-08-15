@@ -97,6 +97,17 @@ body {
     color: var(--primary-color);
 }
 
+.logo-image {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    transition: var(--transition-smooth);
+}
+
+.logo-image:hover {
+    transform: scale(1.05);
+}
+
 .logo i {
     font-size: 28px;
     color: var(--primary-color);
@@ -172,14 +183,15 @@ body {
     transition: var(--transition-smooth);
 }
 
-/* Hero Section Profesional */
+/* Hero Section Profesional Optimizado */
 .hero {
     position: relative;
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex;
     align-items: center;
     background: linear-gradient(135deg, var(--secondary-color) 0%, #ffffff 100%);
     padding-top: 80px;
+    padding-bottom: 40px;
     overflow: hidden;
 }
 
@@ -220,9 +232,34 @@ body {
     width: 100%;
 }
 
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    width: fit-content;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.hero-badge i {
+    font-size: 12px;
+    animation: sparkle 1.5s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.8; }
+}
+
 .hero-title {
     font-family: var(--font-heading);
-    font-size: 48px;
+    font-size: 42px;
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 20px;
@@ -236,24 +273,24 @@ body {
 
 .subtitle-professional {
     display: block;
-    font-size: 32px;
+    font-size: 28px;
     color: var(--text-medium);
     font-weight: 400;
     margin-top: 8px;
 }
 
 .hero-description {
-    font-size: 18px;
+    font-size: 17px;
     color: var(--text-medium);
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     max-width: 600px;
-    line-height: 1.8;
+    line-height: 1.7;
 }
 
 .hero-stats {
     display: flex;
-    gap: 40px;
-    margin-bottom: 40px;
+    gap: 30px;
+    margin-bottom: 30px;
 }
 
 .stat-item {
@@ -262,14 +299,14 @@ body {
 
 .stat-number {
     display: block;
-    font-size: 36px;
+    font-size: 32px;
     font-weight: 700;
     color: var(--primary-color);
     font-family: var(--font-heading);
 }
 
 .stat-label {
-    font-size: 14px;
+    font-size: 13px;
     color: var(--text-medium);
     font-weight: 500;
     text-transform: uppercase;
@@ -326,19 +363,61 @@ body {
     justify-content: center;
 }
 
-/* Ilustración Médica */
+/* Ilustración Médica y Logo Showcase */
 .hero-image {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    gap: 30px;
+}
+
+.hero-logo-showcase {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 500px;
+    z-index: 3;
+}
+
+.hero-logo {
+    height: 120px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 20px rgba(44, 90, 160, 0.3));
+    animation: logoFloat 3s ease-in-out infinite;
+    z-index: 4;
+}
+
+.logo-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(44, 90, 160, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: glow 2s ease-in-out infinite alternate;
+    z-index: 1;
+}
+
+@keyframes logoFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes glow {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+    100% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.8; }
 }
 
 .medical-illustration {
     position: relative;
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
 }
 
 .dna-helix-professional {
@@ -352,9 +431,9 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    border: 3px solid var(--primary-color);
+    border: 2px solid var(--primary-color);
     border-radius: 50%;
-    opacity: 0.7;
+    opacity: 0.6;
 }
 
 .strand-1 {
@@ -374,8 +453,8 @@ body {
 
 .base {
     position: absolute;
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     animation: orbit 15s linear infinite;
 }
@@ -420,7 +499,7 @@ body {
     position: absolute;
     border: 1px solid var(--primary-color);
     border-radius: 50%;
-    opacity: 0.3;
+    opacity: 0.2;
     animation: expand 4s ease-in-out infinite;
 }
 
@@ -812,6 +891,20 @@ body {
     gap: 12px;
 }
 
+.footer-logo-image {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+    transition: var(--transition-smooth);
+}
+
+.footer-logo-image:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
 .footer-logo i {
     font-size: 24px;
     color: var(--primary-light);
@@ -895,6 +988,16 @@ body {
         display: none;
     }
     
+    .logo-image {
+        height: 35px;
+    }
+    
+    .hero {
+        min-height: 80vh;
+        padding-top: 80px;
+        padding-bottom: 20px;
+    }
+    
     .hero-content {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -902,11 +1005,15 @@ body {
     }
     
     .hero-title {
-        font-size: 32px;
+        font-size: 28px;
     }
     
     .subtitle-professional {
-        font-size: 24px;
+        font-size: 20px;
+    }
+    
+    .hero-logo {
+        height: 80px;
     }
     
     .hero-stats {
@@ -925,8 +1032,13 @@ body {
     }
     
     .medical-illustration {
-        width: 300px;
-        height: 300px;
+        width: 250px;
+        height: 250px;
+    }
+    
+    .hero-image {
+        height: 400px;
+        gap: 20px;
     }
     
     .about-content {
@@ -944,6 +1056,10 @@ body {
         grid-template-columns: 1fr;
         gap: 30px;
         text-align: center;
+    }
+    
+    .footer-logo-image {
+        height: 28px;
     }
     
     .footer-links {
@@ -971,12 +1087,20 @@ body {
         padding: 0 16px;
     }
     
+    .logo-image {
+        height: 30px;
+    }
+    
     .hero-title {
-        font-size: 28px;
+        font-size: 24px;
     }
     
     .subtitle-professional {
-        font-size: 20px;
+        font-size: 18px;
+    }
+    
+    .hero-logo {
+        height: 60px;
     }
     
     .section-title {
@@ -994,7 +1118,15 @@ body {
     }
     
     .medical-illustration {
-        width: 250px;
-        height: 250px;
+        width: 200px;
+        height: 200px;
+    }
+    
+    .hero-image {
+        height: 320px;
+    }
+    
+    .footer-logo-image {
+        height: 24px;
     }
 }
