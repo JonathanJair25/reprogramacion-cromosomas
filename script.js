@@ -17,6 +17,7 @@ function initializeMedicalSystem() {
     console.log('🏥 Inicializando Sistema Médico Profesional...');
     
     // Componentes principales
+    initializeElegantHeader();
     initializeNavigation();
     initializeScrollEffects();
     initializeAnimatedCounters();
@@ -26,6 +27,78 @@ function initializeMedicalSystem() {
     initializeAppointmentSystem();
     
     console.log('✅ Sistema Médico inicializado correctamente');
+}
+
+/* ===============================================
+   HEADER ELEGANTE PROFESIONAL
+   =============================================== */
+
+function initializeElegantHeader() {
+    const header = document.querySelector('.medical-header');
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    // Eliminamos el comportamiento de scroll que hace desaparecer el header
+    // El header ahora se mantiene siempre con el mismo tamaño
+    
+    // Función optimizada para scroll (solo para efectos menores)
+    function handleScroll() {
+        // Mantenemos solo efectos visuales menores, sin cambiar el tamaño del header
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Solo aplicamos un sutil cambio de opacidad al fondo si es necesario
+        if (scrollTop > 10) {
+            header.style.background = 'linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.96) 100%)';
+            header.style.backdropFilter = 'blur(25px)';
+            header.style.boxShadow = '0 2px 20px rgba(44, 90, 160, 0.08)';
+        } else {
+            header.style.background = 'linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.96) 100%)';
+            header.style.backdropFilter = 'blur(20px)';
+            header.style.boxShadow = '0 1px 15px rgba(44, 90, 160, 0.06)';
+        }
+    }
+    
+    // Menú móvil súper simple y funcional
+    if (mobileToggle && navMenu) {
+        console.log('Inicializando menú móvil...');
+        
+        mobileToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Click en botón hamburguesa');
+            
+            // Toggle de clases
+            mobileToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            
+            console.log('Estado del menú:', navMenu.classList.contains('active'));
+        });
+        
+        // Cerrar menú al hacer clic en cualquier enlace
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                console.log('Click en enlace del menú');
+                mobileToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Cerrar menú al redimensionar ventana
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                mobileToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    } else {
+        console.log('No se encontraron elementos del menú móvil');
+    }
+    
+    // Event listeners con scroll suave (sin cambios de tamaño)
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // Eliminamos el parallax del logo para mantener estabilidad
+    // El header ahora permanece completamente estático
 }
 
 /* ===============================================
@@ -173,83 +246,24 @@ function animateCounters() {
    =============================================== */
 
 function initializeMobileMenu() {
-    const mobileToggle = document.getElementById('mobileToggle');
-    const navMenu = document.querySelector('.nav-menu');
-    
-    if (mobileToggle) {
-        mobileToggle.addEventListener('click', toggleMobileMenu);
-    }
-    
-    // Cerrar menú al hacer click en un enlace
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', closeMobileMenu);
-    });
+    // El menú móvil ya se inicializa en initializeElegantHeader()
+    // Esta función se mantiene para compatibilidad
+    console.log('📱 Menú móvil inicializado desde header elegante');
 }
 
 function toggleMobileMenu() {
-    isMenuOpen = !isMenuOpen;
-    const mobileToggle = document.getElementById('mobileToggle');
-    const navMenu = document.querySelector('.nav-menu');
-    const header = document.querySelector('.medical-header');
-    
-    if (isMenuOpen) {
-        // Abrir menú
-        header.classList.add('mobile-menu-open');
-        mobileToggle.classList.add('active');
-        
-        // Estilo del menú desplegable con animación mejorada
-        navMenu.style.display = 'flex';
-        navMenu.style.flexDirection = 'column';
-        navMenu.style.position = 'absolute';
-        navMenu.style.top = '100%';
-        navMenu.style.left = '0';
-        navMenu.style.right = '0';
-        navMenu.style.background = 'rgba(255, 255, 255, 0.98)';
-        navMenu.style.backdropFilter = 'blur(15px)';
-        navMenu.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.1)';
-        navMenu.style.padding = '1.5rem';
-        navMenu.style.zIndex = '1000';
-        navMenu.style.borderTop = '1px solid rgba(44, 90, 160, 0.1)';
-        navMenu.style.gap = '0.8rem';
-        navMenu.style.animation = 'slideDown 0.3s ease-out';
-        
-        // Prevenir scroll del body
-        document.body.style.overflow = 'hidden';
-    } else {
-        closeMobileMenu();
+    // Esta función ahora se maneja dentro de initializeElegantHeader()
+    // Se mantiene para compatibilidad con posibles referencias externas
+    if (window.closeMobileMenu && isMenuOpen) {
+        window.closeMobileMenu();
     }
 }
 
 function closeMobileMenu() {
-    isMenuOpen = false;
-    const mobileToggle = document.getElementById('mobileToggle');
-    const navMenu = document.querySelector('.nav-menu');
-    const header = document.querySelector('.medical-header');
-    
-    if (header) {
-        header.classList.remove('mobile-menu-open');
-    }
-    
-    if (mobileToggle) {
-        mobileToggle.classList.remove('active');
-        
-        // Restaurar estilos del menú
-        if (window.innerWidth <= 768) {
-            navMenu.style.display = 'none';
-        } else {
-            navMenu.style.display = 'flex';
-            navMenu.style.position = 'static';
-        }
-        
-        // Restaurar botón hamburguesa
-        const spans = mobileToggle.querySelectorAll('span');
-        spans.forEach(span => {
-            span.style.transform = '';
-            span.style.opacity = '';
-        });
-        
-        // Restaurar scroll del body
-        document.body.style.overflow = '';
+    // Esta función se redefine en initializeElegantHeader()
+    // Se mantiene un fallback aquí
+    if (window.closeMobileMenu) {
+        window.closeMobileMenu();
     }
 }
 

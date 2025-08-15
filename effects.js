@@ -28,6 +28,9 @@ function initializeEffects() {
     
     // Smooth scroll mejorado
     setupSmoothScroll();
+    
+    // Efectos de iconos orbitales
+    setupOrbitalEffects();
 }
 
 // ===================================================
@@ -379,6 +382,176 @@ function setupPulseEffects() {
             element.classList.add('pulse-active');
         }, 1000);
     });
+}
+
+// ===================================================
+// EFECTOS ORBITALES PARA ICONOS DEL DOCTOR
+// ===================================================
+function setupOrbitalEffects() {
+    const orbitalIcons = document.querySelectorAll('.orbital-icon');
+    const doctorSection = document.querySelector('.doctor-profile');
+    
+    // Observador para activar las animaciones cuando la sección es visible
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Activar animaciones más dinámicas cuando la sección es visible
+                const orbits = document.querySelectorAll('.orbit');
+                orbits.forEach((orbit, index) => {
+                    orbit.style.animationPlayState = 'running';
+                    orbit.classList.add('orbit-active');
+                });
+                
+                orbitalIcons.forEach((icon, index) => {
+                    icon.style.animationPlayState = 'running';
+                    icon.classList.add('orbital-active');
+                });
+            }
+        });
+    }, { threshold: 0.3 });
+    
+    if (doctorSection) {
+        sectionObserver.observe(doctorSection);
+    }
+    
+    // Agregar efectos de hover mejorados
+    orbitalIcons.forEach((icon, index) => {
+        icon.addEventListener('mouseenter', () => {
+            // Pausar la rotación orbital temporalmente
+            const orbit = icon.closest('.orbit');
+            if (orbit) {
+                orbit.style.animationPlayState = 'paused';
+            }
+            
+            // Agregar clase de efecto especial
+            icon.classList.add('orbital-hover-effect');
+            
+            // Efecto de ondas alrededor del icono
+            createRippleEffect(icon);
+            
+            // Hacer que otros iconos se iluminen suavemente
+            orbitalIcons.forEach(otherIcon => {
+                if (otherIcon !== icon) {
+                    otherIcon.style.opacity = '0.7';
+                    otherIcon.style.transform += ' scale(0.95)';
+                }
+            });
+        });
+        
+        icon.addEventListener('mouseleave', () => {
+            // Reanudar la rotación orbital
+            const orbit = icon.closest('.orbit');
+            if (orbit) {
+                orbit.style.animationPlayState = 'running';
+            }
+            
+            // Remover clase de efecto especial
+            icon.classList.remove('orbital-hover-effect');
+            
+            // Restaurar otros iconos
+            orbitalIcons.forEach(otherIcon => {
+                otherIcon.style.opacity = '1';
+                otherIcon.style.transform = otherIcon.style.transform.replace(' scale(0.95)', '');
+            });
+        });
+        
+        // Agregar variación de velocidad aleatoria sutil
+        const orbit = icon.closest('.orbit');
+        if (orbit) {
+            const baseSpeed = parseFloat(getComputedStyle(orbit).animationDuration);
+            const variation = (Math.random() - 0.5) * 2; // -1 a 1 segundos
+            orbit.style.animationDuration = `${baseSpeed + variation}s`;
+        }
+    });
+    
+    // Efecto de sincronización visual
+    const doctorImageContainer = document.querySelector('.doctor-image-container');
+    if (doctorImageContainer) {
+        doctorImageContainer.addEventListener('mouseenter', () => {
+            orbitalIcons.forEach(icon => {
+                icon.style.animationDuration = '8s'; // Acelerar las animaciones
+                icon.style.transform += ' scale(1.1)';
+                icon.style.boxShadow = '0 12px 35px rgba(107, 155, 209, 0.4)';
+            });
+            
+            // Hacer que las órbitas brillen más
+            const orbits = document.querySelectorAll('.orbit');
+            orbits.forEach(orbit => {
+                orbit.style.borderColor = 'rgba(107, 155, 209, 0.8)';
+                orbit.style.boxShadow = '0 0 40px rgba(107, 155, 209, 0.3)';
+            });
+        });
+        
+        doctorImageContainer.addEventListener('mouseleave', () => {
+            orbitalIcons.forEach(icon => {
+                icon.style.animationDuration = '15s'; // Restaurar velocidad normal
+                icon.style.transform = icon.style.transform.replace(' scale(1.1)', '');
+                icon.style.boxShadow = '0 8px 25px rgba(107, 155, 209, 0.25)';
+            });
+            
+            // Restaurar las órbitas
+            const orbits = document.querySelectorAll('.orbit');
+            orbits.forEach((orbit, index) => {
+                const colors = [
+                    'rgba(107, 155, 209, 0.4)',
+                    'rgba(127, 212, 179, 0.4)',
+                    'rgba(244, 143, 177, 0.4)'
+                ];
+                orbit.style.borderColor = colors[index];
+                orbit.style.boxShadow = `0 0 ${20 + index * 5}px ${colors[index].replace('0.4', '0.1')}`;
+            });
+        });
+    }
+}
+
+// Función para crear efecto de ondas en los iconos
+function createRippleEffect(element) {
+    const ripple = document.createElement('div');
+    ripple.className = 'ripple-effect';
+    ripple.style.cssText = `
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(107, 155, 209, 0.3);
+        transform: translate(-50%, -50%);
+        animation: rippleExpand 0.6s ease-out forwards;
+        pointer-events: none;
+        z-index: -1;
+    `;
+    
+    element.style.position = 'relative';
+    element.appendChild(ripple);
+    
+    // Crear keyframes dinámicamente si no existen
+    if (!document.querySelector('#ripple-keyframes')) {
+        const style = document.createElement('style');
+        style.id = 'ripple-keyframes';
+        style.textContent = `
+            @keyframes rippleExpand {
+                0% {
+                    width: 0;
+                    height: 0;
+                    opacity: 1;
+                }
+                100% {
+                    width: 100px;
+                    height: 100px;
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+    
+    // Remover el efecto después de la animación
+    setTimeout(() => {
+        if (ripple.parentNode) {
+            ripple.parentNode.removeChild(ripple);
+        }
+    }, 600);
 }
 
 // Inicializar efectos de pulso después de que la página cargue
