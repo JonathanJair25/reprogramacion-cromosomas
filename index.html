@@ -30,17 +30,6 @@
                     <li><a href="#contacto" class="nav-link">Contacto</a></li>
                 </ul>
                 
-                <div class="header-actions">
-                    <a href="https://wa.me/52123456789" class="whatsapp-btn" target="_blank">
-                        <i class="fab fa-whatsapp"></i>
-                        <span>WhatsApp</span>
-                    </a>
-                    <button class="appointment-btn" onclick="openAppointmentModal()">
-                        <i class="fas fa-calendar-check"></i>
-                        <span>Agendar Sesión</span>
-                    </button>
-                </div>
-                
                 <div class="mobile-toggle" id="mobileToggle">
                     <span></span>
                     <span></span>
@@ -117,10 +106,10 @@
                     </div>
                     
                     <div class="hero-actions">
-                        <button class="btn-primary" onclick="openAppointmentModal()">
-                            <i class="fas fa-calendar-plus"></i>
-                            <span>Agendar Sesión</span>
-                        </button>
+                        <a href="#contacto" class="btn-primary">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Agendar Consulta</span>
+                        </a>
                         <a href="#servicios" class="btn-secondary">
                             <i class="fas fa-leaf"></i>
                             <span>Ver Servicios</span>
@@ -263,26 +252,79 @@
         </div>
     </section>
 
+    <!-- Sección de Beneficios -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-heart"></i>
+                    <span>Beneficios</span>
+                </div>
+                <h2 class="section-title">
+                    <span>¿Por qué elegir</span>
+                    <span class="title-accent">CromaHeal?</span>
+                </h2>
+                <p class="section-description">
+                    Descubre las ventajas únicas de nuestro enfoque terapéutico integral.
+                </p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3>Terapeuta Especializado</h3>
+                    <p>Más de 12 años de experiencia en biomagnetismo y terapias energéticas</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Métodos Naturales</h3>
+                    <p>Tratamientos 100% naturales sin efectos secundarios</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Resultados Comprobados</h3>
+                    <p>94% de satisfacción en más de 750 pacientes atendidos</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Atención Personalizada</h3>
+                    <p>Cada sesión es adaptada a las necesidades específicas del paciente</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Ambiente Seguro</h3>
+                    <p>Instalaciones profesionales con protocolos de seguridad rigurosos</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Compromiso Total</h3>
+                    <p>Acompañamiento durante todo el proceso de recuperación</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Sección del Terapeuta -->
     <section id="terapeuta" class="doctor-profile">
         <div class="container">
-            <div class="doctor-content">
-                <div class="doctor-image">
-                    <div class="image-frame">
-                        <img src="images/logo.png" alt="Terapeuta Especialista" class="doctor-photo">
-                        <div class="medical-credentials">
-                            <div class="credential-badge">
-                                <i class="fas fa-leaf"></i>
-                                <span>Certificado</span>
-                            </div>
-                            <div class="credential-badge">
-                                <i class="fas fa-yin-yang"></i>
-                                <span>Especialista</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
+            <div class="doctor-content-centered">
                 <div class="doctor-info">
                     <div class="doctor-header">
                         <div class="doctor-badge">
@@ -336,11 +378,7 @@
                     </div>
                     
                     <div class="doctor-contact">
-                        <button class="btn-primary" onclick="openAppointmentModal()">
-                            <i class="fas fa-calendar-check"></i>
-                            <span>Agendar Sesión</span>
-                        </button>
-                        <a href="#contacto" class="btn-secondary">
+                        <a href="#contacto" class="btn-primary">
                             <i class="fas fa-envelope"></i>
                             <span>Contactar Directamente</span>
                         </a>
@@ -689,66 +727,109 @@
         </div>
     </section>
 
-    <!-- Footer Terapéutico -->
-    <footer class="medical-footer">
+    <!-- Sección de Llamada a la Acción -->
+    <section class="cta-section">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="images/logo.png" alt="CromaHeal" class="footer-logo-img">
-                        <div class="footer-brand">
-                            <h3>CromaHeal</h3>
-                            <p>Terapia de Reprogramación Cromosómica</p>
-                        </div>
-                    </div>
-                    <p class="footer-description">
-                        Comprometidos con tu bienestar integral, ofrecemos las terapias 
-                        más avanzadas en biomagnetismo y reprogramación cromosómica.
+            <div class="cta-content">
+                <div class="cta-text">
+                    <h2>¿Listo para transformar tu bienestar?</h2>
+                    <p>
+                        Inicia tu camino hacia el equilibrio energético y la sanación natural. 
+                        Nuestro terapeuta especializado está aquí para guiarte en cada paso.
                     </p>
                 </div>
-                
-                <div class="footer-section">
-                    <h4>Servicios Terapéuticos</h4>
-                    <ul class="footer-links">
-                        <li><a href="#servicios">Reprogramación Cromosómica</a></li>
-                        <li><a href="#servicios">Biomagnetismo Equilibrante</a></li>
-                        <li><a href="#servicios">Terapia Energética Integral</a></li>
-                        <li><a href="#servicios">Armonización Vital</a></li>
-                    </ul>
+                <div class="cta-actions">
+                    <a href="https://wa.me/52123456789" class="btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>Contactar por WhatsApp</span>
+                    </a>
+                    <a href="#contacto" class="btn-outline">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Agendar Consulta</span>
+                    </a>
                 </div>
-                
-                <div class="footer-section">
-                    <h4>Información</h4>
-                    <ul class="footer-links">
-                        <li><a href="#terapeuta">Nuestro Terapeuta</a></li>
-                        <li><a href="#testimonios">Testimonios</a></li>
-                        <li><a href="#documentos">Documentos</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Contacto</h4>
-                    <div class="emergency-contact">
-                        <div class="emergency-item">
-                            <i class="fab fa-whatsapp"></i>
-                            <span>+52 (123) 456-7890</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Profesional -->
+    <footer class="professional-footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <!-- Sección Principal -->
+                    <div class="footer-brand-section">
+                        <div class="footer-logo-container">
+                            <img src="images/logo.png" alt="CromaHeal" class="footer-logo-img">
+                            <div class="footer-brand-info">
+                                <h3 class="footer-brand-name">CromaHeal</h3>
+                                <p class="footer-tagline">Terapia de Reprogramación Cromosómica</p>
+                            </div>
                         </div>
-                        <div class="emergency-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>contacto@cromaheal.com</span>
+                        <p class="footer-mission">
+                            Transformamos vidas a través de terapias innovadoras de biomagnetismo 
+                            y reprogramación cromosómica, promoviendo el equilibrio integral y 
+                            el bienestar holístico.
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" class="social-link" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
                         </div>
+                    </div>
+
+                    <!-- Servicios Terapéuticos -->
+                    <div class="footer-section">
+                        <h4 class="footer-title">Servicios Terapéuticos</h4>
+                        <ul class="footer-links">
+                            <li><a href="#servicios">Reprogramación Cromosómica</a></li>
+                            <li><a href="#servicios">Biomagnetismo Equilibrante</a></li>
+                            <li><a href="#servicios">Terapia Energética Integral</a></li>
+                            <li><a href="#servicios">Armonización Vital</a></li>
+                            <li><a href="#servicios">Sesiones Personalizadas</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Enlaces Rápidos -->
+                    <div class="footer-section">
+                        <h4 class="footer-title">Enlaces Rápidos</h4>
+                        <ul class="footer-links">
+                            <li><a href="#inicio">Inicio</a></li>
+                            <li><a href="#terapeuta">Nuestro Terapeuta</a></li>
+                            <li><a href="#testimonios">Testimonios</a></li>
+                            <li><a href="#beneficios">Beneficios</a></li>
+                            <li><a href="#contacto">Contacto</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <div class="footer-copyright">
-                    <p>&copy; 2024 CromaHeal. Todos los derechos reservados.</p>
-                </div>
-                <div class="footer-legal">
-                    <a href="#privacy">Aviso de Privacidad</a>
-                    <a href="#terms">Términos y Condiciones</a>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <div class="footer-copyright">
+                        <p>&copy; 2024 CromaHeal. Todos los derechos reservados.</p>
+                        <p class="footer-subtitle">Terapias Naturales Certificadas</p>
+                    </div>
+                    <div class="footer-legal">
+                        <a href="documentos/Aviso de Privacidad para Servicios de Terapia Holística.pdf" target="_blank">
+                            Aviso de Privacidad
+                        </a>
+                        <a href="documentos/CONCENTIMIENTO INFORMADO PARA TERAPIAS.pdf" target="_blank">
+                            Consentimiento Informado
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

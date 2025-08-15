@@ -175,7 +175,6 @@ function animateCounters() {
 function initializeMobileMenu() {
     const mobileToggle = document.getElementById('mobileToggle');
     const navMenu = document.querySelector('.nav-menu');
-    const headerActions = document.querySelector('.header-actions');
     
     if (mobileToggle) {
         mobileToggle.addEventListener('click', toggleMobileMenu);
@@ -191,7 +190,6 @@ function toggleMobileMenu() {
     isMenuOpen = !isMenuOpen;
     const mobileToggle = document.getElementById('mobileToggle');
     const navMenu = document.querySelector('.nav-menu');
-    const headerActions = document.querySelector('.header-actions');
     const header = document.querySelector('.medical-header');
     
     if (isMenuOpen) {
@@ -215,22 +213,6 @@ function toggleMobileMenu() {
         navMenu.style.gap = '0.8rem';
         navMenu.style.animation = 'slideDown 0.3s ease-out';
         
-        // Estilo de los botones de acción
-        headerActions.style.display = 'flex';
-        headerActions.style.flexDirection = 'column';
-        headerActions.style.position = 'absolute';
-        headerActions.style.top = 'calc(100% + ' + (navMenu.children.length * 50 + 60) + 'px)';
-        headerActions.style.left = '0';
-        headerActions.style.right = '0';
-        headerActions.style.background = 'rgba(255, 255, 255, 0.98)';
-        headerActions.style.backdropFilter = 'blur(15px)';
-        headerActions.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.1)';
-        headerActions.style.padding = '1.5rem';
-        headerActions.style.zIndex = '999';
-        headerActions.style.gap = '0.8rem';
-        headerActions.style.borderTop = '1px solid rgba(44, 90, 160, 0.1)';
-        headerActions.style.animation = 'slideDown 0.3s ease-out 0.1s both';
-        
         // Prevenir scroll del body
         document.body.style.overflow = 'hidden';
     } else {
@@ -242,7 +224,6 @@ function closeMobileMenu() {
     isMenuOpen = false;
     const mobileToggle = document.getElementById('mobileToggle');
     const navMenu = document.querySelector('.nav-menu');
-    const headerActions = document.querySelector('.header-actions');
     const header = document.querySelector('.medical-header');
     
     if (header) {
@@ -255,12 +236,9 @@ function closeMobileMenu() {
         // Restaurar estilos del menú
         if (window.innerWidth <= 768) {
             navMenu.style.display = 'none';
-            headerActions.style.display = 'none';
         } else {
             navMenu.style.display = 'flex';
-            headerActions.style.display = 'flex';
             navMenu.style.position = 'static';
-            headerActions.style.position = 'static';
         }
         
         // Restaurar botón hamburguesa
